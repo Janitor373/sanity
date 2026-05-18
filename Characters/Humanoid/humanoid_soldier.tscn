@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cmyp724d3r3d4"]
+
+[ext_resource type="PackedScene" uid="uid://8tk17gv3pkoj" path="res://Characters/Humanoid/humanoid.tscn" id="1_qr5vy"]
+[ext_resource type="Script" uid="uid://cf4pxqi8x8y8i" path="res://Scripts/Characters/Humanoid/humanoid_soldier.gd" id="2_qblch"]
+
+[node name="HumanoidSoldier" unique_id=1527644208 instance=ExtResource("1_qr5vy")]
+script = ExtResource("2_qblch")
+default_moveset = null

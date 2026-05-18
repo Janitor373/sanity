@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b88qsvd3f7vlg"]
+
+[ext_resource type="Script" uid="uid://5r723s7eyqu0" path="res://Scripts/Characters/character.gd" id="1_ticvp"]
+[ext_resource type="Script" uid="uid://1rwabc6ie4d1" path="res://Scripts/Bodies/body.gd" id="2_ticvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mn46"]
+size = Vector2(96, 96)
+
+[node name="Character" type="CharacterBody2D" unique_id=1527644208]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_ticvp")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=936281804]
+shape = SubResource("RectangleShape2D_3mn46")
+
+[node name="BodySlot" type="Node2D" parent="." unique_id=323074699]
+script = ExtResource("2_ticvp")
+metadata/_custom_type_script = "uid://1rwabc6ie4d1"

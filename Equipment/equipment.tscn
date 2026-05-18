@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://60pv1je1ulgi"]
+
+[ext_resource type="Script" uid="uid://bgum3uvay3uxi" path="res://Scripts/Equipment/equipment.gd" id="1_ij8sw"]
+
+[node name="Equipment" type="Node2D" unique_id=1143683065]
+script = ExtResource("1_ij8sw")
+
+[node name="Default" type="Sprite2D" parent="." unique_id=2137803223]

@@ -1,0 +1,409 @@
+[gd_scene format=3 uid="uid://dubuslw6svbe6"]
+
+[ext_resource type="Script" uid="uid://tbewnf3b8esj" path="res://Scripts/Bodies/humanoid_body.gd" id="1_y8gse"]
+[ext_resource type="Script" uid="uid://bt8hvhodaedo8" path="res://Scripts/Characters/hitbox.gd" id="2_lkceg"]
+[ext_resource type="Texture2D" uid="uid://biwe8mfgxwf04" path="res://Data/Sprites/Humanoid/Tribal/Head/Jaws/tribal_jaw_0.png" id="3_tamun"]
+[ext_resource type="Texture2D" uid="uid://bnmiodtlxdcqb" path="res://Data/Sprites/Humanoid/Tribal/Head/Skulls/tribal_skull_0.png" id="4_0tcsd"]
+[ext_resource type="Texture2D" uid="uid://dn8x7trw3m681" path="res://Data/Sprites/Humanoid/Tribal/Head/Hairs/tribal_hair_0.png" id="5_n4b1p"]
+[ext_resource type="PackedScene" uid="uid://cpg8xf0aatblb" path="res://Characters/hurtbox.tscn" id="6_43h0r"]
+[ext_resource type="Texture2D" uid="uid://bouewh7hp3a5h" path="res://Props/Objectives/white_bar.png" id="7_mlft0"]
+[ext_resource type="Texture2D" uid="uid://0klphmapsdes" path="res://Data/Sprites/Humanoid/Tribal/Torso/Shirts/tribal_shirt_0.png" id="8_l5enl"]
+[ext_resource type="Texture2D" uid="uid://c8q4ruvmd0x3n" path="res://Data/Sprites/Humanoid/Tribal/Head/Necks/tribal_neck_0.png" id="8_sqjst"]
+[ext_resource type="Texture2D" uid="uid://62b7v0qvw7rp" path="res://Data/Sprites/Humanoid/Tribal/Torso/Bodies/tribal_bare_body_0.png" id="9_uctpe"]
+[ext_resource type="Texture2D" uid="uid://csw58u3eugyt3" path="res://Data/Sprites/Humanoid/Tribal/Arm/Hands/tribal_bare_hand_l_0.png" id="9_xifgv"]
+[ext_resource type="Texture2D" uid="uid://b804nvsypqo8u" path="res://Data/Sprites/Humanoid/Tribal/Arm/Lower_Arms/tribal_clothed_lower_arm_0.png" id="10_oinnf"]
+[ext_resource type="Texture2D" uid="uid://bn5fy7120m0g6" path="res://Data/Sprites/Humanoid/Tribal/Arm/Upper_Arms/tribal_clothed_upper_arm_0.png" id="11_gntdd"]
+[ext_resource type="Texture2D" uid="uid://c8yt1r6klocw1" path="res://Data/Sprites/Humanoid/Tribal/Accesories/tribal_belt_0.png" id="11_mqsoc"]
+[ext_resource type="Texture2D" uid="uid://bgi52wyypmx3p" path="res://Data/Sprites/Humanoid/Tribal/Arm/Shoulders/tribal_clothed_shoulder_l_0.png" id="12_nqxgo"]
+[ext_resource type="Texture2D" uid="uid://x2ra103w45ox" path="res://Data/Sprites/Humanoid/Tribal/Arm/Hands/tribal_bare_hand_r_0.png" id="13_sqjst"]
+[ext_resource type="Texture2D" uid="uid://cy18hsell830e" path="res://Data/Sprites/Humanoid/Tribal/Arm/Lower_Arms/tribal_bare_lower_arm_0.png" id="13_t67wj"]
+[ext_resource type="Texture2D" uid="uid://b38p5m502b2wa" path="res://Data/Sprites/Humanoid/Tribal/Arm/Shoulders/tribal_clothed_shoulder_r_0.png" id="14_uctpe"]
+[ext_resource type="Texture2D" uid="uid://b6003j8tiyvwj" path="res://Data/Sprites/Humanoid/Tribal/Arm/Upper_Arms/tribal_bare_upper_arm_0.png" id="15_rmh6c"]
+[ext_resource type="Texture2D" uid="uid://c0qplovsougmd" path="res://Data/Sprites/Humanoid/Tribal/Arm/Shoulders/tribal_bare_shoulder_l_0.png" id="17_mht8o"]
+[ext_resource type="Texture2D" uid="uid://duqwvw3cv2eao" path="res://Data/Sprites/Humanoid/Tribal/Torso/Hips/tribal_clothed_hip_0.png" id="18_mht8o"]
+[ext_resource type="Texture2D" uid="uid://db3skwxnq0jph" path="res://Data/Sprites/Humanoid/Tribal/Arm/Shoulders/tribal_bare_shoulder_r_0.png" id="20_apxvu"]
+[ext_resource type="Texture2D" uid="uid://cirb7x4bcq0p2" path="res://Data/Sprites/Humanoid/Tribal/Legs/Foot/tribal_bare_foot_0.png" id="22_2yotc"]
+[ext_resource type="Texture2D" uid="uid://bmfdbhvkxi6ay" path="res://Data/Sprites/Humanoid/Tribal/Legs/Foot/tribal_clothed_foot_0.png" id="23_gai5b"]
+[ext_resource type="Texture2D" uid="uid://cyfcbokg4367j" path="res://Data/Sprites/Humanoid/Tribal/Legs/Shin/tribal_bare_shin_0.png" id="24_7meuk"]
+[ext_resource type="Texture2D" uid="uid://iu67d1rrcda4" path="res://Data/Sprites/Humanoid/Tribal/Legs/Shin/tribal_clothed_shin_0.png" id="25_hjt4s"]
+[ext_resource type="Texture2D" uid="uid://bwjfiw3oeruvc" path="res://Data/Sprites/Humanoid/Tribal/Accesories/tribal_shin_strap_0.png" id="26_1k6c3"]
+[ext_resource type="Texture2D" uid="uid://e6jgelubgc20" path="res://Data/Sprites/Humanoid/Tribal/Legs/Thigh/tribal_bare_thigh_0.png" id="27_ay6i2"]
+[ext_resource type="Texture2D" uid="uid://dbm8fkry5ymgq" path="res://Data/Sprites/Humanoid/Tribal/Legs/Thigh/tribal_clothed_thigh_0.png" id="28_6k55s"]
+[ext_resource type="Texture2D" uid="uid://bu8otjk1pk0jk" path="res://Data/Sprites/Humanoid/Tribal/Torso/Hips/tribal_bare_hip_0.png" id="29_7if5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65n15"]
+size = Vector2(94, 22)
+
+[sub_resource type="PackedScene" id="PackedScene_5oulq"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array()],
+"names": PackedStringArray("Hitbox", "Area2D", "collision_layer", "script", "CollisionShape2D", "CollisionShape2D", "shape", "disabled", "debug_color"),
+"node_count": 2,
+"node_ids": PackedInt32Array(308645329, 1753466949),
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 3, 6, 2, 7, 3, 8, 4, 0),
+"variants": [2, ExtResource("2_lkceg"), SubResource("RectangleShape2D_65n15"), true, Color(0.99999994, 0.01637035, 0.021757409, 0.41960785)],
+"version": 3
+}
+
+[node name="HumanoidBody" type="Node2D" unique_id=1339571577]
+script = ExtResource("1_y8gse")
+hitbox_scene = SubResource("PackedScene_5oulq")
+
+[node name="HumanoidSkeleton" type="Skeleton2D" parent="." unique_id=580783153]
+
+[node name="Root" type="Bone2D" parent="HumanoidSkeleton" unique_id=2119496121]
+position = Vector2(-13, -141)
+rest = Transform2D(1, 0, 0, 1, -13, -141)
+
+[node name="Hip" type="Bone2D" parent="HumanoidSkeleton/Root" unique_id=580218191]
+position = Vector2(14, 2)
+rest = Transform2D(1, 0, 0, 1, 14, 2)
+
+[node name="Torso" type="Bone2D" parent="HumanoidSkeleton/Root/Hip" unique_id=491021162]
+position = Vector2(1, -12)
+rest = Transform2D(1, 0, 0, 1, 1, -12)
+
+[node name="Neck" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1024283263]
+position = Vector2(-3, -112)
+rest = Transform2D(1, 0, 0, 1, -3, -112)
+
+[node name="Skull" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck" unique_id=2122922358]
+position = Vector2(2, -24)
+rest = Transform2D(1, 0, 0, 1, -5, -30)
+
+[node name="Jaw" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull" unique_id=171590009]
+position = Vector2(-3, -12)
+rest = Transform2D(1, 0, 0, 1, -11, -9)
+auto_calculate_length_and_angle = false
+length = 30.0
+bone_angle = 0.0
+
+[node name="JawSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull/Jaw" unique_id=1030456402]
+z_index = 1
+position = Vector2(8, 5)
+texture = ExtResource("3_tamun")
+
+[node name="BeardSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull/Jaw/JawSprite" unique_id=448716147]
+z_index = 1
+
+[node name="SkullSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull" unique_id=30919866]
+position = Vector2(5, -30)
+texture = ExtResource("4_0tcsd")
+
+[node name="HairSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull/SkullSprite" unique_id=1055067721]
+position = Vector2(0, -20)
+texture = ExtResource("5_n4b1p")
+
+[node name="HeadHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull" unique_id=1107071678 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(14, -17)
+size = Vector2(62, 70)
+
+[node name="NeckSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck" unique_id=1866132077]
+position = Vector2(6, -15)
+texture = ExtResource("8_sqjst")
+
+[node name="Torso_Back" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1637799708]
+visible = false
+self_modulate = Color(0.091832735, 0.40429172, 9.62615e-08, 1)
+position = Vector2(-1, -57)
+texture = ExtResource("9_uctpe")
+
+[node name="TorsoClothed_Back" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Torso_Back" unique_id=1508681057]
+texture = ExtResource("8_l5enl")
+
+[node name="TorsoClothed_Accessory" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Torso_Back/TorsoClothed_Back" unique_id=1861510310]
+texture = ExtResource("7_mlft0")
+
+[node name="Torso_Front" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1222756169]
+visible = false
+self_modulate = Color(0.6366537, 0, 0.13279095, 1)
+position = Vector2(-1, -57)
+texture = ExtResource("9_uctpe")
+
+[node name="TorsoClothed_Front" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Torso_Front" unique_id=1847885359]
+texture = ExtResource("8_l5enl")
+
+[node name="TorsoClothed_Accessory" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Torso_Front/TorsoClothed_Front" unique_id=271002609]
+texture = ExtResource("7_mlft0")
+
+[node name="Torso_Default" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=705704584]
+position = Vector2(-1, -56.999992)
+texture = ExtResource("9_uctpe")
+
+[node name="TorsoClothed_Default" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Torso_Default" unique_id=807521852]
+texture = ExtResource("8_l5enl")
+
+[node name="TorsoClothed_Accessory" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Torso_Default/TorsoClothed_Default" unique_id=686327522]
+z_index = 1
+position = Vector2(0, 60)
+texture = ExtResource("11_mqsoc")
+
+[node name="TorsoHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=152189586 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(-1, -49)
+size = Vector2(70, 150)
+body_part = 0
+
+[node name="ShoulderL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1236712629]
+z_index = -5
+position = Vector2(33, -119)
+rest = Transform2D(1, 0, 0, 1, 42, -131)
+
+[node name="UpperArmL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL" unique_id=890378571]
+position = Vector2(2, 18)
+rest = Transform2D(1, 0, 0, 1, 2, 18)
+
+[node name="ForeArmL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL" unique_id=523592826]
+position = Vector2(-4, 56)
+rest = Transform2D(1, 0, 0, 1, 1, 48)
+
+[node name="HandL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=1123472571]
+position = Vector2(3, 57)
+rest = Transform2D(1, 0, 0, 1, 3, 57)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="HandLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL/HandL" unique_id=479669794]
+position = Vector2(0.99999994, 10.999999)
+texture = ExtResource("9_xifgv")
+
+[node name="HandLClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL/HandL/HandLSprite" unique_id=427539474]
+z_index = 1
+
+[node name="HandLAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL/HandL" unique_id=1114680132]
+position = Vector2(1, 11)
+
+[node name="ForeArmLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=556409292]
+z_index = 1
+position = Vector2(2, 28)
+texture = ExtResource("13_t67wj")
+
+[node name="ForeArmLClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL/ForeArmLSprite" unique_id=1461421190]
+z_index = 1
+texture = ExtResource("10_oinnf")
+
+[node name="ForeArmLHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=1369466565 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(1, 42)
+size = Vector2(18, 73)
+body_part = 2
+
+[node name="ForearmLAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=1882688709]
+position = Vector2(0, 28)
+
+[node name="UpperArmLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL" unique_id=1211355440]
+z_index = -1
+position = Vector2(-4.5474735e-13, 27)
+texture = ExtResource("15_rmh6c")
+
+[node name="UpperArmLClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/UpperArmLSprite" unique_id=1000712598]
+z_index = 2
+texture = ExtResource("11_gntdd")
+
+[node name="UpperArmLHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL" unique_id=1087279646 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(1, 18)
+size = Vector2(20, 72)
+body_part = 2
+
+[node name="ShoulderLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL" unique_id=1322219419]
+z_index = -1
+position = Vector2(1, 11)
+texture = ExtResource("17_mht8o")
+
+[node name="ShoulderLClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/ShoulderLSprite" unique_id=1634014966]
+z_index = 1
+texture = ExtResource("12_nqxgo")
+
+[node name="ShoulderR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1457206421]
+z_index = 5
+position = Vector2(-40, -117)
+rest = Transform2D(1, 0, 0, 1, -39, -129)
+
+[node name="UpperArmR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR" unique_id=1429469451]
+position = Vector2(-2, 15)
+rest = Transform2D(1, 0, 0, 1, -2, 15)
+
+[node name="ForeArmR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR" unique_id=1810952654]
+position = Vector2(0, 55)
+rest = Transform2D(1, 0, 0, 1, 0, 55)
+
+[node name="HandR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR" unique_id=444047143]
+position = Vector2(2, 58)
+rest = Transform2D(1, 0, 0, 1, 2, 58)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="HandRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR/HandR" unique_id=1010753143]
+position = Vector2(3, 10)
+texture = ExtResource("13_sqjst")
+
+[node name="HandRClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR/HandR/HandRSprite" unique_id=2047518123]
+z_index = 1
+
+[node name="HandRAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR/HandR" unique_id=1335206923]
+position = Vector2(3, 10)
+
+[node name="ForeArmRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR" unique_id=1870872799]
+position = Vector2(0, 28)
+texture = ExtResource("13_t67wj")
+
+[node name="ForeArmRClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR/ForeArmRSprite" unique_id=1842720208]
+z_index = 1
+texture = ExtResource("10_oinnf")
+
+[node name="ForeArmRHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR" unique_id=1539306286 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(0, 38)
+size = Vector2(18, 80)
+body_part = 3
+
+[node name="UpperArmRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR" unique_id=960869354]
+position = Vector2(-4.5474735e-13, 27)
+texture = ExtResource("15_rmh6c")
+
+[node name="UpperArmRClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/UpperArmRSprite" unique_id=1864367558]
+texture = ExtResource("11_gntdd")
+
+[node name="UpperArmRHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR" unique_id=1871673043 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(0, 20)
+size = Vector2(20, 68)
+body_part = 3
+
+[node name="ShoulderRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR" unique_id=651583164]
+position = Vector2(0, 11)
+texture = ExtResource("20_apxvu")
+
+[node name="ShoulderRClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/ShoulderRSprite" unique_id=1087715657]
+z_index = 1
+texture = ExtResource("14_uctpe")
+
+[node name="ThighL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip" unique_id=1376932373]
+position = Vector2(21, 12)
+rest = Transform2D(1, 0, 0, 1, 21, 12)
+
+[node name="ShinL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighL" unique_id=847637384]
+position = Vector2(2, 99)
+rest = Transform2D(1, 0, 0, 1, 2, 99)
+
+[node name="FootL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL" unique_id=374934473]
+position = Vector2(-7, 93)
+rest = Transform2D(1, 0, 0, 1, -7, 93)
+auto_calculate_length_and_angle = false
+length = 32.0
+bone_angle = 0.0
+
+[node name="FootLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL/FootL" unique_id=1084471603]
+position = Vector2(13.000002, -1.2187576)
+texture = ExtResource("22_2yotc")
+
+[node name="FootLClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL/FootL/FootLSprite" unique_id=960751680]
+z_index = 2
+position = Vector2(-2, 0)
+texture = ExtResource("23_gai5b")
+
+[node name="ShinLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL" unique_id=748892213]
+z_index = -1
+position = Vector2(-1.999999, 40.64062)
+texture = ExtResource("24_7meuk")
+
+[node name="ShinLClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL/ShinLSprite" unique_id=1273289314]
+z_index = 1
+texture = ExtResource("25_hjt4s")
+
+[node name="ShinLAccessorySprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL/ShinLSprite/ShinLClothedSprite" unique_id=2112009459]
+z_index = 1
+position = Vector2(1, 0)
+texture = ExtResource("26_1k6c3")
+
+[node name="ShinLHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL" unique_id=464528457 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(-2, 52)
+size = Vector2(28, 102)
+body_part = 4
+
+[node name="ThighLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL" unique_id=1783585385]
+z_index = -1
+position = Vector2(-0.49999976, 51.35938)
+texture = ExtResource("27_ay6i2")
+
+[node name="ThighLClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ThighLSprite" unique_id=440010565]
+texture = ExtResource("28_6k55s")
+
+[node name="ThighLHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighL" unique_id=1754957731 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(0, 51)
+size = Vector2(30, 97.5)
+body_part = 4
+
+[node name="ThighR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip" unique_id=2080684430]
+position = Vector2(-20, 10)
+rest = Transform2D(1, 0, 0, 1, -20, 10)
+
+[node name="ShinR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighR" unique_id=787330731]
+position = Vector2(5, 104)
+rest = Transform2D(1, 0, 0, 1, 5, 104)
+
+[node name="FootR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR" unique_id=690077470]
+position = Vector2(-10, 92)
+rest = Transform2D(1, 0, 0, 1, -10, 92)
+auto_calculate_length_and_angle = false
+length = 32.0
+bone_angle = 0.0
+
+[node name="FootRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR/FootR" unique_id=164378961]
+position = Vector2(16, -1.2187576)
+texture = ExtResource("22_2yotc")
+
+[node name="FootRClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR/FootR/FootRSprite" unique_id=47204419]
+z_index = 2
+position = Vector2(-3, 0)
+texture = ExtResource("23_gai5b")
+
+[node name="ShinRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR" unique_id=1203024002]
+z_index = -1
+position = Vector2(-2.999999, 40.14063)
+texture = ExtResource("24_7meuk")
+
+[node name="ShinRClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR/ShinRSprite" unique_id=39219578]
+z_index = 1
+texture = ExtResource("25_hjt4s")
+
+[node name="ShinRAccessorySprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR/ShinRSprite/ShinRClothedSprite" unique_id=429435961]
+z_index = 1
+position = Vector2(1, 0)
+texture = ExtResource("26_1k6c3")
+
+[node name="ShinRHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR" unique_id=2078978686 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(-3, 51)
+size = Vector2(28, 101)
+body_part = 5
+
+[node name="ThighRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR" unique_id=1886259874]
+z_index = -1
+position = Vector2(1.9999975, 54.35937)
+texture = ExtResource("27_ay6i2")
+
+[node name="ThighRClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ThighRSprite" unique_id=821467500]
+texture = ExtResource("28_6k55s")
+
+[node name="ThighRHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighR" unique_id=1568444976 instance=ExtResource("6_43h0r")]
+visible = false
+position = Vector2(2, 54)
+size = Vector2(30, 100)
+body_part = 5
+
+[node name="HipSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip" unique_id=199170298]
+texture = ExtResource("29_7if5e")
+
+[node name="HipClothedSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/HipSprite" unique_id=1853738913]
+texture = ExtResource("18_mht8o")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://v3tu1nufycb8"]
+
+[ext_resource type="PackedScene" uid="uid://7ml2oj880amp" path="res://Characters/Humanoid/humanoid_hero.tscn" id="1_pocp4"]
+[ext_resource type="Script" uid="uid://ely0ymjxvmn8" path="res://Scripts/Characters/Humanoid/player_hero.gd" id="2_c7yem"]
+[ext_resource type="PackedScene" uid="uid://dubuslw6svbe6" path="res://Bodies/Humanoid/tribal_test_body.tscn" id="3_bf72w"]
+
+[node name="Player" unique_id=1527644208 instance=ExtResource("1_pocp4")]
+script = ExtResource("2_c7yem")
+
+[node name="Collision" parent="." index="0" unique_id=936281804]
+position = Vector2(6, 25)
+
+[node name="HumanoidBody" parent="BodySlot" parent_id_path=PackedInt32Array(323074699) index="0" unique_id=1339571577 instance=ExtResource("3_bf72w")]
+
+[node name="CarryPoint" parent="." index="2" unique_id=2088273798]
+position = Vector2(27, -143)
+
+[node name="Camera2D" type="Camera2D" parent="." index="3" unique_id=1587440772]
+offset = Vector2(0, -80)

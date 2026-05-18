@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://8tk17gv3pkoj"]
+
+[ext_resource type="PackedScene" uid="uid://b88qsvd3f7vlg" path="res://Characters/character.tscn" id="1_ui5cg"]
+[ext_resource type="Script" uid="uid://budai664auuje" path="res://Scripts/Characters/Humanoid/humanoid_character.gd" id="2_edr31"]
+[ext_resource type="Resource" uid="uid://bwegddnljabv8" path="res://Data/Movesets/infantry_moveset.tres" id="3_edr31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edr31"]
+size = Vector2(108, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tield"]
+size = Vector2(194, 182)
+
+[node name="Humanoid" unique_id=1527644208 instance=ExtResource("1_ui5cg")]
+script = ExtResource("2_edr31")
+default_moveset = ExtResource("3_edr31")
+
+[node name="Collision" parent="." index="0" unique_id=936281804]
+position = Vector2(6, 22.5)
+shape = SubResource("RectangleShape2D_edr31")
+
+[node name="InteractionBox" type="Area2D" parent="." index="2" unique_id=78299179]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionBox" index="0" unique_id=453319173]
+position = Vector2(5, 23)
+shape = SubResource("RectangleShape2D_tield")
+debug_color = Color(0.7160899, 0.48277593, 1.92523e-07, 0.41960785)
+
+[connection signal="area_entered" from="InteractionBox" to="." method="_on_interaction_box_area_entered"]
+[connection signal="area_exited" from="InteractionBox" to="." method="_on_interaction_box_area_exited"]

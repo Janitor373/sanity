@@ -1,0 +1,34 @@
+# Godot 4+ project cache/import data
+.godot/
+
+# Godot import metadata
+.import/
+
+# Exported builds
+/export/
+/builds/
+
+# Mono / C# build artifacts
+bin/
+obj/
+*.csproj
+*.sln
+*.user
+*.mdb
+*.pdb
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup / temporary files
+*~
+*.tmp
+*.temp
+
+# Imported editor backups
+*.import
+
+# Logs
+*.log

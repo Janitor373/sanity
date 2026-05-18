@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://7ml2oj880amp"]
+
+[ext_resource type="PackedScene" uid="uid://8tk17gv3pkoj" path="res://Characters/Humanoid/humanoid.tscn" id="1_0kr2a"]
+[ext_resource type="Script" uid="uid://cdqy1sgexn6e" path="res://Scripts/Characters/Humanoid/humanoid_hero.gd" id="2_0vms2"]
+
+[node name="HumanoidHero" unique_id=1527644208 instance=ExtResource("1_0kr2a")]
+script = ExtResource("2_0vms2")
+default_moveset = null
+
+[node name="CarryPoint" type="Node2D" parent="." index="2" unique_id=2088273798]
+position = Vector2(80, -2)

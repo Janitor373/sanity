@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://ca23kfnf6nknc"]
+
+[ext_resource type="Script" uid="uid://tbewnf3b8esj" path="res://Scripts/Bodies/humanoid_body.gd" id="1_yfe6p"]
+[ext_resource type="Script" uid="uid://bt8hvhodaedo8" path="res://Scripts/Characters/hitbox.gd" id="2_n46pr"]
+[ext_resource type="Texture2D" uid="uid://bouewh7hp3a5h" path="res://Props/Objectives/white_bar.png" id="3_fm12x"]
+[ext_resource type="PackedScene" uid="uid://cpg8xf0aatblb" path="res://Characters/hurtbox.tscn" id="4_di36x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65n15"]
+size = Vector2(94, 22)
+
+[sub_resource type="PackedScene" id="PackedScene_5oulq"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array()],
+"names": PackedStringArray("Hitbox", "Area2D", "collision_layer", "script", "CollisionShape2D", "CollisionShape2D", "shape", "disabled", "debug_color"),
+"node_count": 2,
+"node_ids": PackedInt32Array(308645329, 1753466949),
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 3, 6, 2, 7, 3, 8, 4, 0),
+"variants": [2, ExtResource("2_n46pr"), SubResource("RectangleShape2D_65n15"), true, Color(0.99999994, 0.01637035, 0.021757409, 0.41960785)],
+"version": 3
+}
+
+[node name="HumanoidBody" type="Node2D" unique_id=1339571577]
+script = ExtResource("1_yfe6p")
+hitbox_scene = SubResource("PackedScene_5oulq")
+
+[node name="HumanoidSkeleton" type="Skeleton2D" parent="." unique_id=580783153]
+
+[node name="Root" type="Bone2D" parent="HumanoidSkeleton" unique_id=2119496121]
+position = Vector2(-13, -141)
+rest = Transform2D(1, 0, 0, 1, -13, -141)
+
+[node name="Hip" type="Bone2D" parent="HumanoidSkeleton/Root" unique_id=580218191]
+position = Vector2(14, 2)
+rest = Transform2D(1, 0, 0, 1, 14, 2)
+
+[node name="Torso" type="Bone2D" parent="HumanoidSkeleton/Root/Hip" unique_id=491021162]
+position = Vector2(1, -12)
+rest = Transform2D(1, 0, 0, 1, 1, -12)
+
+[node name="Neck" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1024283263]
+position = Vector2(-3, -112)
+rest = Transform2D(1, 0, 0, 1, -3, -112)
+
+[node name="Skull" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck" unique_id=2122922358]
+position = Vector2(-5, -30)
+rest = Transform2D(1, 0, 0, 1, -5, -30)
+
+[node name="Jaw" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull" unique_id=171590009]
+position = Vector2(-11, -9)
+rest = Transform2D(1, 0, 0, 1, -11, -9)
+auto_calculate_length_and_angle = false
+length = 50.0
+bone_angle = 0.0
+
+[node name="JawSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull/Jaw" unique_id=1030456402]
+z_index = 1
+position = Vector2(26.932518, 10)
+rotation = 3.1415927
+texture = ExtResource("3_fm12x")
+
+[node name="SkullSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull" unique_id=30919866]
+position = Vector2(13.828127, -25.999992)
+texture = ExtResource("3_fm12x")
+
+[node name="HeadHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/Neck/Skull" unique_id=1107071678 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(14, -17)
+size = Vector2(62, 70)
+
+[node name="NeckSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Neck" unique_id=1866132077]
+position = Vector2(0, -10)
+texture = ExtResource("3_fm12x")
+
+[node name="Torso_Back" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1637799708]
+visible = false
+self_modulate = Color(0.091832735, 0.40429172, 9.62615e-08, 1)
+position = Vector2(-1, -57)
+texture = ExtResource("3_fm12x")
+
+[node name="Torso_Front" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1222756169]
+visible = false
+self_modulate = Color(0.6366537, 0, 0.13279095, 1)
+position = Vector2(-1, -57)
+texture = ExtResource("3_fm12x")
+
+[node name="Torso_Default" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=705704584]
+position = Vector2(-1, -56.999992)
+texture = ExtResource("3_fm12x")
+
+[node name="TorsoHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=152189586 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(-1, -49)
+size = Vector2(70, 150)
+body_part = 0
+
+[node name="ShoulderL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1236712629]
+z_index = -1
+position = Vector2(41, -119)
+rest = Transform2D(1, 0, 0, 1, 42, -131)
+
+[node name="UpperArmL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL" unique_id=890378571]
+position = Vector2(2, 18)
+rest = Transform2D(1, 0, 0, 1, 2, 18)
+
+[node name="ForeArmL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL" unique_id=523592826]
+position = Vector2(1, 48)
+rest = Transform2D(1, 0, 0, 1, 1, 48)
+
+[node name="HandL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=1123472571]
+position = Vector2(3, 57)
+rest = Transform2D(1, 0, 0, 1, 3, 57)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="HandLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL/HandL" unique_id=479669794]
+position = Vector2(0.99999994, 10.999999)
+texture = ExtResource("3_fm12x")
+
+[node name="HandLAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL/HandL" unique_id=1038965418]
+position = Vector2(1, 11)
+
+[node name="ForeArmLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=556409292]
+position = Vector2(-1.7881393e-07, 28)
+texture = ExtResource("3_fm12x")
+
+[node name="ForeArmLHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=1369466565 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(1, 42)
+size = Vector2(18, 73)
+body_part = 2
+
+[node name="ForearmLAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL/ForeArmL" unique_id=512732665]
+position = Vector2(0, 28)
+
+[node name="UpperArmLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL" unique_id=1211355440]
+position = Vector2(-4.5474735e-13, 27)
+texture = ExtResource("3_fm12x")
+
+[node name="UpperArmLHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL/UpperArmL" unique_id=1087279646 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(1, 18)
+size = Vector2(20, 72)
+body_part = 2
+
+[node name="ShoulderLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderL" unique_id=1322219419]
+z_index = -1
+position = Vector2(1, 11)
+texture = ExtResource("3_fm12x")
+
+[node name="ShoulderR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=1457206421]
+z_index = 1
+position = Vector2(-40, -117)
+rest = Transform2D(1, 0, 0, 1, -39, -129)
+
+[node name="UpperArmR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR" unique_id=1429469451]
+position = Vector2(-2, 15)
+rest = Transform2D(1, 0, 0, 1, -2, 15)
+
+[node name="ForeArmR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR" unique_id=1810952654]
+position = Vector2(0, 55)
+rest = Transform2D(1, 0, 0, 1, 0, 55)
+
+[node name="HandR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR" unique_id=444047143]
+position = Vector2(2, 58)
+rest = Transform2D(1, 0, 0, 1, 2, 58)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="HandRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR/HandR" unique_id=1010753143]
+position = Vector2(0, 9.999999)
+texture = ExtResource("3_fm12x")
+
+[node name="HandRAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR/HandR" unique_id=29845301]
+position = Vector2(0, 10)
+
+[node name="ForeArmRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR" unique_id=1870872799]
+position = Vector2(0, 28)
+texture = ExtResource("3_fm12x")
+
+[node name="ForeArmRHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR/ForeArmR" unique_id=1539306286 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(0, 38)
+size = Vector2(18, 80)
+body_part = 3
+
+[node name="UpperArmRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR" unique_id=960869354]
+position = Vector2(-4.5474735e-13, 27)
+texture = ExtResource("3_fm12x")
+
+[node name="UpperArmRHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR/UpperArmR" unique_id=1871673043 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(0, 20)
+size = Vector2(20, 68)
+body_part = 3
+
+[node name="ShoulderRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/ShoulderR" unique_id=651583164]
+position = Vector2(0, 11)
+texture = ExtResource("3_fm12x")
+
+[node name="ThighL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip" unique_id=1376932373]
+position = Vector2(21, 12)
+rest = Transform2D(1, 0, 0, 1, 21, 12)
+
+[node name="ShinL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighL" unique_id=847637384]
+position = Vector2(2, 99)
+rest = Transform2D(1, 0, 0, 1, 2, 99)
+
+[node name="FootL" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL" unique_id=374934473]
+position = Vector2(-7, 93)
+rest = Transform2D(1, 0, 0, 1, -7, 93)
+auto_calculate_length_and_angle = false
+length = 32.0
+bone_angle = 0.0
+
+[node name="FootLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL/FootL" unique_id=1084471603]
+position = Vector2(13.000002, -1.2187576)
+texture = ExtResource("3_fm12x")
+
+[node name="ShinLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL" unique_id=748892213]
+position = Vector2(-1.999999, 40.64062)
+texture = ExtResource("3_fm12x")
+
+[node name="ShinLHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighL/ShinL" unique_id=464528457 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(-2, 52)
+size = Vector2(28, 102)
+body_part = 4
+
+[node name="ThighLSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighL" unique_id=1783585385]
+z_index = -1
+position = Vector2(-0.49999976, 51.35938)
+texture = ExtResource("3_fm12x")
+
+[node name="ThighLHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighL" unique_id=1754957731 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(0, 51)
+size = Vector2(30, 97.5)
+body_part = 4
+
+[node name="ThighR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip" unique_id=2080684430]
+position = Vector2(-20, 10)
+rest = Transform2D(1, 0, 0, 1, -20, 10)
+
+[node name="ShinR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighR" unique_id=787330731]
+position = Vector2(5, 104)
+rest = Transform2D(1, 0, 0, 1, 5, 104)
+
+[node name="FootR" type="Bone2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR" unique_id=690077470]
+position = Vector2(-10, 92)
+rest = Transform2D(1, 0, 0, 1, -10, 92)
+auto_calculate_length_and_angle = false
+length = 32.0
+bone_angle = 0.0
+
+[node name="FootRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR/FootR" unique_id=164378961]
+position = Vector2(16, -1.2187576)
+texture = ExtResource("3_fm12x")
+
+[node name="ShinRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR" unique_id=1203024002]
+position = Vector2(-2.999999, 40.14063)
+texture = ExtResource("3_fm12x")
+
+[node name="ShinRHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighR/ShinR" unique_id=2078978686 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(-3, 51)
+size = Vector2(28, 101)
+body_part = 5
+
+[node name="ThighRSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/ThighR" unique_id=1886259874]
+z_index = -1
+position = Vector2(1.9999975, 54.35937)
+texture = ExtResource("3_fm12x")
+
+[node name="ThighRHurtbox" parent="HumanoidSkeleton/Root/Hip/ThighR" unique_id=1568444976 instance=ExtResource("4_di36x")]
+visible = false
+position = Vector2(2, 54)
+size = Vector2(30, 100)
+body_part = 5
+
+[node name="HipSprite" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip" unique_id=199170298]
+texture = ExtResource("3_fm12x")
