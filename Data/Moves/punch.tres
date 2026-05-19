@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://dtr3p00mdppu0"]
+
+[ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_7lr1h"]
+[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="1_tjl45"]
+[ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="2_40x4p"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="2_fejoa"]
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="3_cntqm"]
+
+[sub_resource type="Resource" id="Resource_ox6tc"]
+script = ExtResource("3_cntqm")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_x8j6i"]
+script = ExtResource("3_cntqm")
+time = 0.1
+position_offset = Vector2(120, -70)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_6ml5o"]
+script = ExtResource("3_cntqm")
+time = 0.2
+position_offset = Vector2(160, -90)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_6pbxy"]
+script = ExtResource("3_cntqm")
+time = 0.5
+position_offset = Vector2(80, -60)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_xt0h4"]
+script = ExtResource("3_cntqm")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_8e5wk"]
+script = ExtResource("2_fejoa")
+bone_name = &"HandR"
+keyframes = Array[ExtResource("3_cntqm")]([SubResource("Resource_ox6tc"), SubResource("Resource_x8j6i"), SubResource("Resource_6ml5o"), SubResource("Resource_6pbxy"), SubResource("Resource_xt0h4")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="Resource_tjl45"]
+script = ExtResource("2_fejoa")
+bone_name = &"HandL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="Resource_fejoa"]
+script = ExtResource("2_fejoa")
+bone_name = &"FootR"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="Resource_cntqm"]
+script = ExtResource("2_fejoa")
+bone_name = &"FootL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="Resource_fqoup"]
+script = ExtResource("1_tjl45")
+clip_name = &"punch"
+duration = 0.5
+tracks = Array[ExtResource("2_fejoa")]([SubResource("Resource_8e5wk"), SubResource("Resource_tjl45"), SubResource("Resource_fejoa"), SubResource("Resource_cntqm")])
+metadata/_custom_type_script = "uid://bs5iod7tqllph"
+
+[sub_resource type="Resource" id="Resource_3aiha"]
+script = ExtResource("1_7lr1h")
+attachment_point = &"HandR"
+size = Vector2(40, 40)
+offset = Vector2(15, 15)
+active_start_time = 0.2
+active_end_time = 0.4
+metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
+
+[resource]
+script = ExtResource("2_40x4p")
+move_name = &"punch"
+animation_clip = SubResource("Resource_fqoup")
+duration = 0.5
+hitboxes = Array[ExtResource("1_7lr1h")]([SubResource("Resource_3aiha")])
+metadata/_custom_type_script = "uid://dev7mvsyscumr"

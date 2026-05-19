@@ -16,13 +16,18 @@ var leg_l_hp: float = 0.0
 var leg_r_hp: float = 0.0
 
 @export var walk_cycle_speed: float = 6.0
-@export var walk_leg_swing_degrees: float = 18.0
-@export var walk_foot_tilt_degrees: float = 8.0
-@export var walk_arm_swing_degrees: float = 14.0
+#@export var walk_leg_swing_degrees: float = 30.0
+#@export var walk_foot_tilt_degrees: float = 8.0
+#@export var walk_arm_swing_degrees: float = 20.0
 @export var walk_bob_amount: float = 3.0
 @export var walk_torso_tilt_degrees: float = 6.0
 @export var walk_hip_swing_degrees: float = 3.0
 @onready var hip_sprite: Sprite2D = $HumanoidSkeleton/Root/Hip/HipSprite
+
+@export var walk_hand_swing_x: float = 10.0
+@export var walk_hand_swing_y: float = 3.0
+@export var walk_foot_swing_x: float = 12.0
+@export var walk_foot_lift_y: float = 4.0
 
 @export var idle_speed: float = 2.0
 @export var idle_bob_amount: float = 2.0
@@ -213,11 +218,8 @@ func apply_locomotion_pose(_delta: float) -> void:
 	var cycle: float = sin(locomotion_time)
 	var opposite: float = sin(locomotion_time + PI)
 
-	var leg_swing: float = deg_to_rad(walk_leg_swing_degrees)
-	var arm_swing: float = deg_to_rad(walk_arm_swing_degrees)
 	var torso_tilt: float = deg_to_rad(walk_torso_tilt_degrees)
 	var hip_sway: float = deg_to_rad(walk_hip_swing_degrees)
-	var foot_tilt: float = deg_to_rad(walk_foot_tilt_degrees)
 	var bob: float = abs(sin(locomotion_time)) * walk_bob_amount
 
 	hip.position.y += bob
@@ -226,12 +228,14 @@ func apply_locomotion_pose(_delta: float) -> void:
 	var local_move_x: float = move_input.x * facing
 	torso.rotation += local_move_x * torso_tilt
 
-	foot_l.rotation += cycle * leg_swing
-	foot_r.rotation += opposite * leg_swing
-	if (foot_l.rotation > 0):
-		foot_r.rotation -= cycle * foot_tilt
-	if (foot_r.rotation > 0):
-		foot_l.rotation += cycle * foot_tilt
+	foot_l.position.x += cycle * walk_foot_swing_x
+	foot_r.position.x += opposite * walk_foot_swing_x
 
-	hand_l.rotation += opposite * arm_swing
-	hand_r.rotation += cycle * arm_swing
+	foot_l.position.y -= abs(cycle) * walk_foot_lift_y
+	foot_r.position.y -= abs(opposite) * walk_foot_lift_y
+
+	hand_l.position.x += opposite * walk_hand_swing_x
+	hand_r.position.x += cycle * walk_hand_swing_x
+
+	hand_l.position.y += abs(opposite) * walk_hand_swing_y
+	hand_r.position.y += abs(cycle) * walk_hand_swing_y
