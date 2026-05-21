@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://b8v4n7k2m3pxq"]
+
+[ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_gu"]
+[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_gu"]
+[ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="3_gu"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="4_gu"]
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="5_gu"]
+
+[sub_resource type="Resource" id="kf_gu_hr0"]
+script = ExtResource("5_gu")
+time = 0.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hr1"]
+script = ExtResource("5_gu")
+time = 0.12
+position_offset = Vector2(65, -40)
+rotation_degrees = -25.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hr2"]
+script = ExtResource("5_gu")
+time = 0.88
+position_offset = Vector2(65, -40)
+rotation_degrees = -25.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hr3"]
+script = ExtResource("5_gu")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hl0"]
+script = ExtResource("5_gu")
+time = 0.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hl1"]
+script = ExtResource("5_gu")
+time = 0.12
+position_offset = Vector2(-65, -35)
+rotation_degrees = 25.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hl2"]
+script = ExtResource("5_gu")
+time = 0.88
+position_offset = Vector2(-65, -35)
+rotation_degrees = 25.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hl3"]
+script = ExtResource("5_gu")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="trk_gu_hr"]
+script = ExtResource("4_gu")
+bone_name = &"HandR"
+keyframes = Array[ExtResource("5_gu")]([SubResource("kf_gu_hr0"), SubResource("kf_gu_hr1"), SubResource("kf_gu_hr2"), SubResource("kf_gu_hr3")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_gu_hl"]
+script = ExtResource("4_gu")
+bone_name = &"HandL"
+keyframes = Array[ExtResource("5_gu")]([SubResource("kf_gu_hl0"), SubResource("kf_gu_hl1"), SubResource("kf_gu_hl2"), SubResource("kf_gu_hl3")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_gu_fr"]
+script = ExtResource("4_gu")
+bone_name = &"FootR"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_gu_fl"]
+script = ExtResource("4_gu")
+bone_name = &"FootL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="clip_gu"]
+script = ExtResource("2_gu")
+clip_name = &"guard_unarmed"
+duration = 0.5
+tracks = Array[ExtResource("4_gu")]([SubResource("trk_gu_hr"), SubResource("trk_gu_hl"), SubResource("trk_gu_fr"), SubResource("trk_gu_fl")])
+metadata/_custom_type_script = "uid://bs5iod7tqllph"
+
+[resource]
+script = ExtResource("3_gu")
+move_name = &"guard_unarmed"
+animation_clip = SubResource("clip_gu")
+duration = 0.5
+hitboxes = Array[ExtResource("1_gu")]([])
+metadata/_custom_type_script = "uid://dev7mvsyscumr"

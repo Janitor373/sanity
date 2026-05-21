@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Moveset" format=3 uid="uid://dv4n8k2m9p7xr"]
+
+[ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="1_vm"]
+[ext_resource type="Script" uid="uid://vokxubf8d0ux" path="res://Scripts/Resources/Moves/moveset.gd" id="2_vm"]
+[ext_resource type="Resource" uid="uid://dtr3p00mdppu0" path="res://Data/Moves/punch.tres" id="3_vm"]
+[ext_resource type="Resource" uid="uid://c4k2m9n7v5pbx" path="res://Data/Moves/sword_attack.tres" id="4_vm"]
+[ext_resource type="Resource" uid="uid://d7n2k9m4v8pxr" path="res://Data/Moves/axe_attack.tres" id="5_vm"]
+[ext_resource type="Resource" uid="uid://b8v4n7k2m3pxq" path="res://Data/Moves/guard_unarmed.tres" id="6_vm"]
+
+[resource]
+script = ExtResource("2_vm")
+moveset_name = &"versus"
+stance = &"default"
+moves = Array[ExtResource("1_vm")]([ExtResource("3_vm"), ExtResource("4_vm"), ExtResource("5_vm"), ExtResource("6_vm")])
+metadata/_custom_type_script = "uid://vokxubf8d0ux"

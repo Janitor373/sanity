@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LoadoutData" load_steps=3 format=3 uid="uid://ce4n8k2v7p5xm"]
+
+[ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="1_lo02"]
+[ext_resource type="PackedScene" uid="uid://dw3k8n5v2p9xm" path="res://Equipment/sword.tscn" id="2_lo02"]
+
+[resource]
+script = ExtResource("1_lo02")
+display_name = &"Sword"
+icon = null
+weapon_scene = ExtResource("2_lo02")
+shield_scene = null
+moveset_override = null
+metadata/_custom_type_script = "uid://dn2v8r5w7m4hk"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InputProfile" load_steps=2 format=3 uid="uid://cq4k8n2v7m5xr"]
+
+[ext_resource type="Script" uid="uid://cn7v3k9p2m4xr" path="res://Scripts/Resources/Game/input_profile.gd" id="1_ip02"]
+
+[resource]
+script = ExtResource("1_ip02")
+move_up = &"p2_move_upwards"
+move_down = &"p2_move_downwards"
+move_left = &"p2_move_left"
+move_right = &"p2_move_right"
+attack = &"p2_attack"
+jump = &"p2_jump"
+defend = &"p2_defend"
+metadata/_custom_type_script = "uid://cn7v3k9p2m4xr"
