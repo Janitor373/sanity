@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv8m4n7k2p9wt"]
+
+[ext_resource type="Script" uid="uid://dx5p9k4n7v2bm" path="res://Scripts/Game/match.gd" id="1_match"]
+[ext_resource type="PackedScene" uid="uid://bw2k7n4v8p3xm" path="res://UI/MatchHUD.tscn" id="2_hud"]
+[ext_resource type="PackedScene" uid="uid://ck7n4v2p9m5xt" path="res://UI/PauseMenu.tscn" id="3_pause"]
+
+[node name="Match" type="Node2D"]
+script = ExtResource("1_match")
+
+[node name="StageSlot" type="Node2D" parent="."]
+
+[node name="FightersSlot" type="Node2D" parent="."]
+
+[node name="HudLayer" type="Node" parent="."]
+
+[node name="MatchHUD" parent="HudLayer" instance=ExtResource("2_hud")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]

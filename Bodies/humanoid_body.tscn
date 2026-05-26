@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://km5p5jwvfy0e"]
 
 [ext_resource type="Script" uid="uid://tbewnf3b8esj" path="res://Scripts/Bodies/humanoid_body.gd" id="1_5g0ar"]
-[ext_resource type="Script" uid="uid://ce1sg0mrgyevy" path="res://Scripts/Characters/hitbox.gd" id="2_b8lg0"]
-[ext_resource type="PackedScene" path="res://Characters/hurtbox.tscn" id="3_t3464"]
+[ext_resource type="Script" uid="uid://bt8hvhodaedo8" path="res://Scripts/Characters/hitbox.gd" id="2_b8lg0"]
+[ext_resource type="PackedScene" uid="uid://cpg8xf0aatblb" path="res://Characters/hurtbox.tscn" id="3_t3464"]
 [ext_resource type="Texture2D" uid="uid://vro5ll7e4li6" path="res://white_bar.png" id="3_uq2nl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65n15"]
@@ -28,7 +28,6 @@ script = ExtResource("1_5g0ar")
 hitbox_scene = SubResource("PackedScene_5oulq")
 
 [node name="HumanoidSkeleton" type="Skeleton2D" parent="." unique_id=580783153]
-position = Vector2(305, 485)
 
 [node name="Root" type="Bone2D" parent="HumanoidSkeleton" unique_id=2119496121]
 position = Vector2(-20, -34)

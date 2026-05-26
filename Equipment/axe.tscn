@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b9n4v2k8m7pxr"]
+
+[ext_resource type="Script" uid="uid://bgum3uvay3uxi" path="res://Scripts/Equipment/equipment.gd" id="1_axs"]
+[ext_resource type="Resource" uid="uid://c9k4n8v7m2pxr" path="res://Data/Equipment/axe_data.tres" id="2_axs"]
+[ext_resource type="Texture2D" uid="uid://vro5ll7e4li6" path="res://white_bar.png" id="3_axs"]
+
+[node name="Axe" type="Node2D"]
+script = ExtResource("1_axs")
+data = ExtResource("2_axs")
+
+[node name="Handle" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(6, 70)
+self_modulate = Color(0.38, 0.24, 0.1, 1)
+texture = ExtResource("3_axs")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(10, -68)
+scale = Vector2(38, 28)
+self_modulate = Color(0.72, 0.72, 0.76, 1)
+texture = ExtResource("3_axs")
+
+[node name="Spike" type="Sprite2D" parent="."]
+position = Vector2(-4, -80)
+scale = Vector2(8, 14)
+self_modulate = Color(0.72, 0.72, 0.76, 1)
+texture = ExtResource("3_axs")

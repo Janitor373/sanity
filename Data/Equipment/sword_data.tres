@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EquipmentData" load_steps=2 format=3 uid="uid://cs7w4n2k9p3xm"]
+
+[ext_resource type="Script" uid="uid://jmt01psbvs84" path="res://Scripts/Resources/Equipment/equipment_data.gd" id="1_sw01"]
+
+[resource]
+script = ExtResource("1_sw01")
+equipment_type = 2
+attachment_point = &"HandRAttachmentPoint"
+local_offset = Vector2(40, 0)
+local_rotation_degrees = 0.0
+local_z_index_offset = 3
+metadata/_custom_type_script = "uid://jmt01psbvs84"

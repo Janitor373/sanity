@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LoadoutData" load_steps=3 format=3 uid="uid://d5k9n4v2m8pxt"]
+
+[ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="1_al"]
+[ext_resource type="PackedScene" uid="uid://b9n4v2k8m7pxr" path="res://Equipment/axe.tscn" id="2_al"]
+
+[resource]
+script = ExtResource("1_al")
+display_name = &"Axe"
+icon = null
+weapon_scene = ExtResource("2_al")
+shield_scene = null
+moveset_override = null
+metadata/_custom_type_script = "uid://dn2v8r5w7m4hk"

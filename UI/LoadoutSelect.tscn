@@ -1,0 +1,231 @@
+[gd_scene load_steps=7 format=3 uid="uid://df3p8k5v9n2wm"]
+
+[ext_resource type="Script" uid="uid://cm2k8x5p3r7vn" path="res://Scripts/UI/loadout_select.gd" id="1_ls001"]
+
+[sub_resource type="Animation" id="Animation_enter_ls"]
+resource_name = "enter"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_exit_ls"]
+resource_name = "exit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rf_p1_ls"]
+resource_name = "ready_flash_p1"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Layout/P1Side/ReadyLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rf_p2_ls"]
+resource_name = "ready_flash_p2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Layout/P2Side/ReadyLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_RESET_ls"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ls"]
+_data = {
+"RESET": SubResource("Animation_RESET_ls"),
+"enter": SubResource("Animation_enter_ls"),
+"exit": SubResource("Animation_exit_ls"),
+"ready_flash_p1": SubResource("Animation_rf_p1_ls"),
+"ready_flash_p2": SubResource("Animation_rf_p2_ls")
+}
+
+[node name="LoadoutSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_ls001")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.09, 0.09, 0.14, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -400.0
+offset_top = 30.0
+offset_right = 400.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 56
+text = "PICK A LOADOUT"
+horizontal_alignment = 1
+
+[node name="Layout" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 140.0
+offset_right = -40.0
+offset_bottom = -40.0
+theme_override_constants/separation = 80
+
+[node name="P1Side" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="NameLabel" type="Label" parent="Layout/P1Side"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.7, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "P1"
+horizontal_alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="Layout/P1Side"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LoadoutRow" type="HBoxContainer" parent="Layout/P1Side"]
+layout_mode = 2
+alignment = 1
+
+[node name="LeftArrow" type="Label" parent="Layout/P1Side"]
+visible = false
+layout_mode = 2
+
+[node name="LoadoutIcon" type="TextureRect" parent="Layout/P1Side"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LoadoutNameLabel" type="Label" parent="Layout/P1Side"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "..."
+horizontal_alignment = 1
+
+[node name="RightArrow" type="Label" parent="Layout/P1Side"]
+visible = false
+layout_mode = 2
+
+[node name="ReadyLabel" type="Label" parent="Layout/P1Side"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_font_sizes/font_size = 36
+text = ""
+horizontal_alignment = 1
+
+[node name="P2Side" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="NameLabel" type="Label" parent="Layout/P2Side"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 40
+text = "P2"
+horizontal_alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="Layout/P2Side"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LeftArrow" type="Label" parent="Layout/P2Side"]
+visible = false
+layout_mode = 2
+
+[node name="LoadoutIcon" type="TextureRect" parent="Layout/P2Side"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LoadoutNameLabel" type="Label" parent="Layout/P2Side"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "..."
+horizontal_alignment = 1
+
+[node name="RightArrow" type="Label" parent="Layout/P2Side"]
+visible = false
+layout_mode = 2
+
+[node name="ReadyLabel" type="Label" parent="Layout/P2Side"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_font_sizes/font_size = 36
+text = ""
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ls")
+}
