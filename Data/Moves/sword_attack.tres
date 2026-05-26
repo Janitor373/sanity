@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Move" format=3 uid="uid://c4k2m9n7v5pbx"]
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://c4k2nan7v5pbx"]
 
 [ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_sw"]
 [ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_sw"]
@@ -8,28 +8,27 @@
 
 [sub_resource type="Resource" id="kf_sw0"]
 script = ExtResource("5_sw")
-time = 0.0
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_sw1"]
 script = ExtResource("5_sw")
 time = 0.15
-position_offset = Vector2(-25, -20)
 rotation_degrees = -35.0
+position_offset = Vector2(-25, -20)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_sw2"]
 script = ExtResource("5_sw")
 time = 0.35
-position_offset = Vector2(160, -30)
 rotation_degrees = 25.0
+position_offset = Vector2(160, -30)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_sw3"]
 script = ExtResource("5_sw")
 time = 0.55
-position_offset = Vector2(145, -18)
 rotation_degrees = 15.0
+position_offset = Vector2(145, -18)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_sw4"]
@@ -61,23 +60,24 @@ metadata/_custom_type_script = "uid://db1nehhiderd1"
 [sub_resource type="Resource" id="clip_sw"]
 script = ExtResource("2_sw")
 clip_name = &"sword_attack"
-duration = 0.3
 tracks = Array[ExtResource("4_sw")]([SubResource("trk_sw_hr"), SubResource("trk_sw_hl"), SubResource("trk_sw_fr"), SubResource("trk_sw_fl")])
 metadata/_custom_type_script = "uid://bs5iod7tqllph"
 
 [sub_resource type="Resource" id="hb_sw"]
 script = ExtResource("1_sw")
 attachment_point = &"HandR"
+shape_type = null
 size = Vector2(70, 22)
 offset = Vector2(30, 0)
 active_start_time = 0.3
 active_end_time = 0.5
+reaction = null
+attack_type = null
 metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
 
 [resource]
 script = ExtResource("3_sw")
 move_name = &"sword_attack"
 animation_clip = SubResource("clip_sw")
-duration = 0.3
 hitboxes = Array[ExtResource("1_sw")]([SubResource("hb_sw")])
 metadata/_custom_type_script = "uid://dev7mvsyscumr"

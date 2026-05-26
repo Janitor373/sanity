@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Move" format=3 uid="uid://d7n2k9m4v8pxr"]
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://c86y7pvc1t60"]
 
 [ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_ax"]
 [ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_ax"]
@@ -8,35 +8,34 @@
 
 [sub_resource type="Resource" id="kf_ax0"]
 script = ExtResource("5_ax")
-time = 0.0
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax1"]
 script = ExtResource("5_ax")
 time = 0.15
-position_offset = Vector2(15, -100)
 rotation_degrees = -120.0
+position_offset = Vector2(15, -100)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax2"]
 script = ExtResource("5_ax")
 time = 0.32
-position_offset = Vector2(25, -140)
 rotation_degrees = -155.0
+position_offset = Vector2(25, -140)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax3"]
 script = ExtResource("5_ax")
 time = 0.55
-position_offset = Vector2(85, 75)
 rotation_degrees = 55.0
+position_offset = Vector2(85, 75)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax4"]
 script = ExtResource("5_ax")
 time = 0.68
-position_offset = Vector2(75, 65)
 rotation_degrees = 45.0
+position_offset = Vector2(75, 65)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax5"]
@@ -75,10 +74,12 @@ metadata/_custom_type_script = "uid://bs5iod7tqllph"
 [sub_resource type="Resource" id="hb_ax"]
 script = ExtResource("1_ax")
 attachment_point = &"HandR"
+shape_type = null
 size = Vector2(50, 50)
-offset = Vector2(0, 0)
 active_start_time = 0.45
 active_end_time = 0.62
+reaction = null
+attack_type = null
 metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
 
 [resource]
