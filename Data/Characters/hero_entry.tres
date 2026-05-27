@@ -1,19 +1,19 @@
-[gd_resource type="Resource" script_class="CharacterEntry" load_steps=8 format=3 uid="uid://dh5p2k7n4w8tm"]
+[gd_resource type="Resource" script_class="CharacterEntry" format=3 uid="uid://dh5p2k7n4w8tm"]
 
-[ext_resource type="Script" uid="uid://ck1n4t2x9p3qa" path="res://Scripts/Resources/Game/character_entry.gd" id="1_ce01"]
+[ext_resource type="Script" uid="uid://ck1n4t2yap3qa" path="res://Scripts/Resources/Game/character_entry.gd" id="1_ce01"]
 [ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="2_ce01"]
-[ext_resource type="PackedScene" uid="uid://dv7k4n2p9m5xt" path="res://Characters/Humanoid/versus_fighter.tscn" id="3_ce01"]
 [ext_resource type="Resource" uid="uid://bk5n7p2v8m4xt" path="res://Data/Loadouts/fists_loadout.tres" id="4_ce01"]
-[ext_resource type="Resource" uid="uid://bm4n7p2v9k8xr" path="res://Data/Characters/hero_stats.tres" id="5_ce01"]
+[ext_resource type="Resource" uid="uid://bm4n7p2wak8xr" path="res://Data/Characters/hero_stats.tres" id="5_ce01"]
+[ext_resource type="PackedScene" uid="uid://cm77y316gn4yo" path="res://Characters/Humanoid/Madness/versus_hero.tscn" id="5_iqxs0"]
 [ext_resource type="Resource" uid="uid://ce4n8k2v7p5xm" path="res://Data/Loadouts/sword_loadout.tres" id="6_ce01"]
-[ext_resource type="Resource" uid="uid://d5k9n4v2m8pxt" path="res://Data/Loadouts/axe_loadout.tres" id="7_ce01"]
+[ext_resource type="Resource" uid="uid://6e22ys21t62" path="res://Data/Loadouts/axe_loadout.tres" id="7_ce01"]
+[ext_resource type="Texture2D" uid="uid://c2opbg8wkbf8f" path="res://Data/Sprites/Madness/Headwear/madness_bandana_1.png" id="7_iqxs0"]
 
 [resource]
 script = ExtResource("1_ce01")
 display_name = &"Hero"
-portrait = null
-character_scene = ExtResource("3_ce01")
-body_tint = Color(1, 1, 1, 1)
+portrait = ExtResource("7_iqxs0")
+character_scene = ExtResource("5_iqxs0")
 available_loadouts = Array[ExtResource("2_ce01")]([ExtResource("4_ce01"), ExtResource("6_ce01"), ExtResource("7_ce01")])
 default_stats = ExtResource("5_ce01")
 metadata/_custom_type_script = "uid://ck1n4t2x9p3qa"

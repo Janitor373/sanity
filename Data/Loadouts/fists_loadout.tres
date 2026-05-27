@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="LoadoutData" load_steps=2 format=3 uid="uid://bk5n7p2v8m4xt"]
+[gd_resource type="Resource" script_class="LoadoutData" format=3 uid="uid://bk5n7p2v8m4xt"]
 
+[ext_resource type="Texture2D" uid="uid://bcb03xtjke065" path="res://Data/Sprites/Madness/Base/madness_hand_r_0.png" id="1_kcp8s"]
 [ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="1_lo01"]
 
 [resource]
 script = ExtResource("1_lo01")
 display_name = &"Fists"
-icon = null
-weapon_scene = null
-shield_scene = null
-moveset_override = null
+icon = ExtResource("1_kcp8s")
 metadata/_custom_type_script = "uid://dn2v8r5w7m4hk"
