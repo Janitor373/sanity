@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HumanoidStats" load_steps=2 format=3 uid="uid://bk4n7v2p9m5xr"]
+[gd_resource type="Resource" script_class="HumanoidStats" format=3 uid="uid://bk4n7v2qam5xr"]
 
 [ext_resource type="Script" uid="uid://dkpj0ik4cwot6" path="res://Scripts/Resources/Stats/humanoid_stats.gd" id="1_st03"]
 

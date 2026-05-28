@@ -1,8 +1,12 @@
 extends HumanoidHero
-class_name VersusFighter
+class_name VersusFighterTest
 
 @export var player_slot: int = 1
 @export var body_tint: Color = Color.WHITE
+
+# Test loadout support, restored from MadnessHero-style setup.
+@export var starting_weapon_scene: PackedScene
+@export var starting_shield_scene: PackedScene
 
 const WALK_SPEED := 320.0
 const GRAVITY := 2400.0
@@ -24,13 +28,21 @@ var attack_timer: float = 0.0
 var is_blocking: bool = false
 var was_blocking: bool = false
 
+var equipped_weapon: Equipment = null
+var equipped_shield: Equipment = null
+
+
 func _ready() -> void:
 	super._ready()
+
+	equip_starting_loadout()
+
 	if body != null:
 		body.modulate = body_tint
 		var skeleton := body.get_node_or_null("HumanoidSkeleton")
 		if skeleton is Node2D:
 			body_anchor = (skeleton as Node2D).position
+
 
 func _physics_process(delta: float) -> void:
 	if not ground_set:
@@ -47,12 +59,16 @@ func _physics_process(delta: float) -> void:
 
 	if not is_dazed:
 		is_blocking = grounded and PlayerInput.defend_held(player_slot)
+
 		if is_blocking and not was_blocking:
-			play_named_move(&"guard_unarmed")
+			play_named_move(_get_defend_move_name())
+
 		if not is_blocking:
 			move_x = PlayerInput.get_horizontal(player_slot)
+
 			if grounded and PlayerInput.jump_pressed(player_slot):
 				vertical_velocity = JUMP_VELOCITY
+
 			if attack_timer <= 0.0 and PlayerInput.attack_pressed(player_slot):
 				_attack()
 
@@ -71,18 +87,32 @@ func _physics_process(delta: float) -> void:
 		if vertical_velocity > 0.0:
 			vertical_velocity = 0.0
 
+
+func equip_starting_loadout() -> void:
+	if body == null:
+		return
+
+	if starting_weapon_scene != null:
+		equipped_weapon = body.equip_weapon_scene(starting_weapon_scene)
+
+	if starting_shield_scene != null:
+		equipped_shield = body.equip_shield_scene(starting_shield_scene)
+
+
 func _attack() -> void:
 	attack_timer = ATTACK_COOLDOWN
 	handle_attack_input()
+
 	if opponent == null or not is_instance_valid(opponent):
 		return
+
 	var dx := opponent.global_position.x - global_position.x
 	var dy := opponent.global_position.y - global_position.y
 	var reach := BASE_ATTACK_RANGE
 	var damage := BASE_ATTACK_DAMAGE
+
 	if _has_weapon():
-		var wtype: int = (body.equipped_weapon as Equipment).get_equipment_type()
-		match wtype:
+		match _get_weapon_type():
 			EquipmentData.EquipmentType.BAT:
 				reach += WEAPON_RANGE_BONUS + 20.0
 				damage += WEAPON_DAMAGE_BONUS + 4
@@ -92,53 +122,98 @@ func _attack() -> void:
 			_:
 				reach += WEAPON_RANGE_BONUS
 				damage += WEAPON_DAMAGE_BONUS
+
 	if absf(dx) <= reach and absf(dy) <= ATTACK_VERTICAL_RANGE:
 		opponent.take_fighter_hit(damage)
 		AudioManager.play_hit()
 
+
 func take_fighter_hit(amount: int) -> void:
 	var final_amount := amount
-	#if is_blocking:
-		#final_amount = maxi(1, roundi(amount * BLOCK_MULTIPLIER))
-	#hp = maxi(0, hp - final_amount)
+
+	if is_blocking:
+		final_amount = maxi(1, roundi(amount * BLOCK_MULTIPLIER))
+
+	hp = maxi(0, hp - final_amount)
+
 
 func _has_weapon() -> bool:
-	return body != null and body.equipped_weapon != null and is_instance_valid(body.equipped_weapon)
+	return equipped_weapon != null and is_instance_valid(equipped_weapon)
+
+
+func _has_shield() -> bool:
+	return (
+		equipped_shield != null
+		and is_instance_valid(equipped_shield)
+		and equipped_shield.data != null
+		and equipped_shield.get_equipment_type() == EquipmentData.EquipmentType.SHIELD
+	)
+
+
+func _get_weapon_type() -> int:
+	if not _has_weapon():
+		return EquipmentData.EquipmentType.NONE
+
+	return equipped_weapon.get_equipment_type()
+
 
 func _face_opponent() -> void:
 	if body == null or opponent == null or not is_instance_valid(opponent):
 		return
+
 	var dx := opponent.global_position.x - global_position.x
+
 	if dx > 1.0:
 		body.set_facing(1)
 	elif dx < -1.0:
 		body.set_facing(-1)
 
+
 func _anchor_body() -> void:
 	if body == null:
 		return
+
 	body.position = Vector2(-body.facing * body_anchor.x, -body_anchor.y)
+
 
 func attack() -> void:
 	play_named_move(_get_attack_move_name())
 
+
 func _get_attack_move_name() -> StringName:
-	if not _has_weapon():
-		return &"punch"
-	if not (body.equipped_weapon is Equipment):
-		return &"punch"
-	var wtype: int = (body.equipped_weapon as Equipment).get_equipment_type()
-	match wtype:
-		EquipmentData.EquipmentType.SWORD:
-			return &"sword_attack"
+	match _get_weapon_type():
 		EquipmentData.EquipmentType.AXE:
 			return &"axe_attack"
+		EquipmentData.EquipmentType.SPEAR:
+			return &"spear_attack"
+		EquipmentData.EquipmentType.SWORD:
+			return &"sword_attack"
+		EquipmentData.EquipmentType.DAGGER:
+			return &"dagger_attack"
 		EquipmentData.EquipmentType.BAT:
 			return &"bat_attack"
 		EquipmentData.EquipmentType.BATON:
 			return &"baton_attack"
 		_:
 			return &"punch"
+
+
+func _get_defend_move_name() -> StringName:
+	if _has_shield():
+		return &"shield_defend"
+
+	match _get_weapon_type():
+		EquipmentData.EquipmentType.AXE:
+			return &"axe_defend"
+		EquipmentData.EquipmentType.SPEAR:
+			return &"spear_defend"
+		EquipmentData.EquipmentType.SWORD:
+			return &"sword_defend"
+		EquipmentData.EquipmentType.DAGGER:
+			return &"dagger_defend"
+		_:
+			return &"guard_unarmed"
+
 
 func die(_killer = null) -> void:
 	velocity = Vector2.ZERO

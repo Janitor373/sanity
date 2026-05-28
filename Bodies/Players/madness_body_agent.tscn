@@ -57,7 +57,6 @@ position = Vector2(2, 20)
 texture = ExtResource("4_iyvvb")
 
 [node name="TorsoHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso" unique_id=152189586 instance=ExtResource("4_sld2o")]
-visible = false
 position = Vector2(0, 80)
 size = Vector2(70, 150)
 body_part = 0
@@ -75,7 +74,6 @@ texture = ExtResource("5_iyvvb")
 [node name="HandLAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/HandL" unique_id=2055799737]
 
 [node name="HandLHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/HandL" unique_id=1107071678 instance=ExtResource("4_sld2o")]
-visible = false
 size = Vector2(30, 30)
 
 [node name="HandL_Angled0" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/HandL" unique_id=2108198313]

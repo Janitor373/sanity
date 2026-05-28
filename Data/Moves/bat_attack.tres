@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Move" format=3 uid="uid://bk9m4v7n2p5xq"]
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://blam4v7n2p5xq"]
 
 [ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_bat"]
 [ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_bat"]
@@ -19,14 +19,14 @@ metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_bat2"]
 script = ExtResource("5_bat")
-time = 0.40
+time = 0.4
 rotation_degrees = 30.0
 position_offset = Vector2(130, 20)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_bat3"]
 script = ExtResource("5_bat")
-time = 0.60
+time = 0.6
 rotation_degrees = 20.0
 position_offset = Vector2(120, 10)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
@@ -74,14 +74,12 @@ active_end_time = 0.62
 damage = 18
 daze_damage = 25.0
 knockback = Vector2(300, -100)
-reaction = 1
-attack_type = 0
 metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
 
 [resource]
 script = ExtResource("3_bat")
 move_name = &"bat_attack"
-duration = 0.65
 animation_clip = SubResource("clip_bat")
+duration = 0.65
 hitboxes = Array[ExtResource("1_bat")]([SubResource("hb_bat")])
 metadata/_custom_type_script = "uid://dev7mvsyscumr"

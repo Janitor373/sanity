@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://c4k2nan7v5pbx" path="res://Data/Moves/sword_attack.tres" id="4_vm"]
 [ext_resource type="Resource" uid="uid://c86y7pvc1t60" path="res://Data/Moves/axe_attack.tres" id="5_vm"]
 [ext_resource type="Resource" uid="uid://b8v4n7k2m3pxq" path="res://Data/Moves/guard_unarmed.tres" id="6_vm"]
-[ext_resource type="Resource" uid="uid://bk9m4v7n2p5xq" path="res://Data/Moves/bat_attack.tres" id="7_vm"]
+[ext_resource type="Resource" uid="uid://blam4v7n2p5xq" path="res://Data/Moves/bat_attack.tres" id="7_vm"]
 [ext_resource type="Resource" uid="uid://cn5k8v2m7p4xq" path="res://Data/Moves/baton_attack.tres" id="8_vm"]
 
 [resource]

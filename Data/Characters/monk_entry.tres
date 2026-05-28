@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="CharacterEntry" format=3 uid="uid://cm7k4p9n2v5xr"]
+[gd_resource type="Resource" script_class="CharacterEntry" format=3 uid="uid://cm7k4qan2v5xr"]
 
 [ext_resource type="Script" uid="uid://ck1n4t2yap3qa" path="res://Scripts/Resources/Game/character_entry.gd" id="1_ce04"]
 [ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="2_ce04"]
 [ext_resource type="Resource" uid="uid://bk5n7p2v8m4xt" path="res://Data/Loadouts/fists_loadout.tres" id="4_ce04"]
-[ext_resource type="Resource" uid="uid://cm7k4v9n2p5xr" path="res://Data/Characters/monk_stats.tres" id="5_ce04"]
+[ext_resource type="Resource" uid="uid://cm7k4wan2p5xr" path="res://Data/Characters/monk_stats.tres" id="5_ce04"]
 [ext_resource type="PackedScene" uid="uid://b7ypjmuwi0es2" path="res://Characters/Humanoid/Madness/versus_monk.tscn" id="6_ce04"]
 [ext_resource type="Resource" uid="uid://ce4n8k2v7p5xm" path="res://Data/Loadouts/sword_loadout.tres" id="7_ce04"]
 [ext_resource type="Resource" uid="uid://6e22ys21t62" path="res://Data/Loadouts/axe_loadout.tres" id="8_ce04"]
 [ext_resource type="Texture2D" uid="uid://j1pbko6630bp" path="res://Data/Sprites/Madness/Headwear/madness_glasses_2.png" id="9_ce04"]
-[ext_resource type="Resource" uid="uid://bm7k4v9n2p5xr" path="res://Data/Loadouts/bat_loadout.tres" id="10_ce04"]
+[ext_resource type="Resource" uid="uid://bm7k4wan2p5xr" path="res://Data/Loadouts/bat_loadout.tres" id="10_ce04"]
 [ext_resource type="Resource" uid="uid://ck8v2n5m7p4xr" path="res://Data/Loadouts/baton_loadout.tres" id="11_ce04"]
 
 [resource]

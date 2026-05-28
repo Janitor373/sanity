@@ -10,9 +10,9 @@ size = Vector2(90, 180)
 
 [node name="Fighter" unique_id=2105682632 instance=ExtResource("1_vf01")]
 script = ExtResource("2_vf01")
+default_moveset = ExtResource("4_vf01")
 player_slot = 1
 body_tint = Color(1, 1, 1, 1)
-default_moveset = ExtResource("4_vf01")
 
 [node name="Collision" parent="." index="0" unique_id=936281804]
 position = Vector2(0, -80)

@@ -8,7 +8,7 @@
 script = ExtResource("1_axs")
 data = ExtResource("2_axs")
 
-[node name="Axe" type="Sprite2D" parent="." unique_id=118001605]
+[node name="Default" type="Sprite2D" parent="." unique_id=118001605]
 position = Vector2(15, -49)
 rotation = -1.5707964
 texture = ExtResource("3_vbvcj")

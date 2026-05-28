@@ -5,7 +5,7 @@ class_name Character
 @onready var body_slot: Node = $BodySlot
 
 @export var stats: CharacterStats
-var hp: int = 0
+var hp: float = 0.0
 var daze: float = 0.0
 var is_dazed: bool = false
 var body: Body = null
@@ -48,6 +48,8 @@ func handle_attack_input() -> void:
 		attack()
 
 func receive_hit(hitbox: Hitbox, hurtbox: Hurtbox) -> void:
+	print("RECEIVE_HIT start | hp before=", hp)
+
 	var attack_value := 0
 	if hitbox.attacker != null and hitbox.attacker.has_method("get_attack"):
 		attack_value = hitbox.attacker.get_attack()
@@ -59,19 +61,11 @@ func receive_hit(hitbox: Hitbox, hurtbox: Hurtbox) -> void:
 	var final_damage: int = roundi(raw_damage * hurtbox.damage_multiplier)
 	hp -= final_damage
 
-	print(
-		name,
-		" was hit on ",
-		Hurtbox.BodyPart.keys()[hurtbox.body_part],
-		" for ",
-		final_damage,
-		" damage. HP now: ",
-		hp
-	)
+	print("RECEIVE_HIT end | final_damage=", final_damage, " hp after=", hp)
 
 	if hp <= 0:
 		die(hitbox.attacker)
-	
+
 	add_daze(hitbox.daze_damage, hitbox.attacker)
 
 func die(_killer = null) -> void:

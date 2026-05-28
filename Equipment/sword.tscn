@@ -8,7 +8,7 @@
 script = ExtResource("1_sw01")
 data = ExtResource("2_sw01")
 
-[node name="Sword" type="Sprite2D" parent="." unique_id=1028090750]
+[node name="Default" type="Sprite2D" parent="." unique_id=1028090750]
 self_modulate = Color(0.78, 0.8, 0.85, 1)
 position = Vector2(56, 1)
 texture = ExtResource("3_p8kl4")

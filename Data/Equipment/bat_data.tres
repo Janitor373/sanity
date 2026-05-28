@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EquipmentData" load_steps=2 format=3 uid="uid://bk9m4v7n2p5xt"]
+[gd_resource type="Resource" script_class="EquipmentData" format=3 uid="uid://blam4v7n2p5xt"]
 
 [ext_resource type="Script" uid="uid://jmt01psbvs84" path="res://Scripts/Resources/Equipment/equipment_data.gd" id="1_btd"]
 

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dv4bift86ynpn"]
+
+[ext_resource type="PackedScene" uid="uid://7ml2oj880amp" path="res://Characters/Humanoid/humanoid_hero.tscn" id="1_7otie"]
+[ext_resource type="Script" uid="uid://cx053fupip35w" path="res://Scripts/Characters/Humanoid/versus_fighter_test.gd" id="2_wigxx"]
+[ext_resource type="PackedScene" uid="uid://2x2ste31o4nk" path="res://Bodies/madness_body_player_default.tscn" id="3_7otie"]
+[ext_resource type="PackedScene" uid="uid://bm7k4wan2p5xt" path="res://Equipment/bat.tscn" id="3_k5waj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdtvp"]
+size = Vector2(90, 180)
+
+[node name="Fighter" unique_id=2105682632 instance=ExtResource("1_7otie")]
+script = ExtResource("2_wigxx")
+player_slot = 1
+body_tint = Color(1, 1, 1, 1)
+starting_weapon_scene = ExtResource("3_k5waj")
+starting_shield_scene = null
+
+[node name="Collision" parent="." index="0" unique_id=936281804]
+position = Vector2(0, -80)
+shape = SubResource("RectangleShape2D_rdtvp")
+
+[node name="MadnessBody" parent="BodySlot" parent_id_path=PackedInt32Array(323074699) index="0" unique_id=1339571577 instance=ExtResource("3_7otie")]
+
+[node name="CarryPoint" parent="." index="2" unique_id=2088273798]
+position = Vector2(27, -143)
+
+[node name="InteractionBox" parent="." index="3" unique_id=78299179]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="." index="4" unique_id=1227236427]
+offset = Vector2(0, -100)
