@@ -144,6 +144,7 @@ func _start_round() -> void:
 	match_active = false
 
 	_set_fighters_active(false)
+	hud.reset_bars()
 	hud.update_timer(time_remaining)
 	hud.refresh_score()
 	hud.show_center_message("ROUND %d" % MatchSettings.current_round, "round_announcement")
