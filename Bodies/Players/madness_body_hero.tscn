@@ -95,6 +95,7 @@ texture = ExtResource("6_b047b")
 [node name="HandRGlove" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/HandR/HandR_Default" unique_id=37001320]
 
 [node name="HandRAttachmentPoint" type="Node2D" parent="HumanoidSkeleton/Root/Hip/Torso/HandR" unique_id=121655895]
+z_index = -1
 
 [node name="HandRHurtbox" parent="HumanoidSkeleton/Root/Hip/Torso/HandR" unique_id=137670916 instance=ExtResource("4_8jlbb")]
 visible = false

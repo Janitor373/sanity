@@ -57,10 +57,33 @@ script = ExtResource("4_sw")
 bone_name = &"FootL"
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
+[sub_resource type="Resource" id="Resource_p77jk"]
+script = ExtResource("5_sw")
+z_index_offset = -1
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_wdq1v"]
+script = ExtResource("5_sw")
+time = 0.35
+z_index_offset = -1
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_73xsg"]
+script = ExtResource("5_sw")
+time = 1.0
+z_index_offset = -1
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_em6ls"]
+script = ExtResource("4_sw")
+bone_name = &"Sword"
+keyframes = Array[ExtResource("5_sw")]([SubResource("Resource_p77jk"), SubResource("Resource_wdq1v"), SubResource("Resource_73xsg")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
 [sub_resource type="Resource" id="clip_sw"]
 script = ExtResource("2_sw")
 clip_name = &"sword_attack"
-tracks = Array[ExtResource("4_sw")]([SubResource("trk_sw_hr"), SubResource("trk_sw_hl"), SubResource("trk_sw_fr"), SubResource("trk_sw_fl")])
+tracks = Array[ExtResource("4_sw")]([SubResource("trk_sw_hr"), SubResource("trk_sw_hl"), SubResource("trk_sw_fr"), SubResource("trk_sw_fl"), SubResource("Resource_em6ls")])
 metadata/_custom_type_script = "uid://bs5iod7tqllph"
 
 [sub_resource type="Resource" id="hb_sw"]

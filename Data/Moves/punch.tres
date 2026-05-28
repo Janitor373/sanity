@@ -39,26 +39,11 @@ bone_name = &"HandR"
 keyframes = Array[ExtResource("3_cntqm")]([SubResource("Resource_ox6tc"), SubResource("Resource_x8j6i"), SubResource("Resource_6ml5o"), SubResource("Resource_6pbxy"), SubResource("Resource_xt0h4")])
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
-[sub_resource type="Resource" id="Resource_tjl45"]
-script = ExtResource("2_fejoa")
-bone_name = &"HandL"
-metadata/_custom_type_script = "uid://db1nehhiderd1"
-
-[sub_resource type="Resource" id="Resource_fejoa"]
-script = ExtResource("2_fejoa")
-bone_name = &"FootR"
-metadata/_custom_type_script = "uid://db1nehhiderd1"
-
-[sub_resource type="Resource" id="Resource_cntqm"]
-script = ExtResource("2_fejoa")
-bone_name = &"FootL"
-metadata/_custom_type_script = "uid://db1nehhiderd1"
-
 [sub_resource type="Resource" id="Resource_fqoup"]
 script = ExtResource("1_tjl45")
 clip_name = &"punch"
 duration = 0.5
-tracks = Array[ExtResource("2_fejoa")]([SubResource("Resource_8e5wk"), SubResource("Resource_tjl45"), SubResource("Resource_fejoa"), SubResource("Resource_cntqm")])
+tracks = Array[ExtResource("2_fejoa")]([SubResource("Resource_8e5wk")])
 metadata/_custom_type_script = "uid://bs5iod7tqllph"
 
 [sub_resource type="Resource" id="Resource_3aiha"]
