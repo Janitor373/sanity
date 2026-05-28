@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://ce4n8k2v7p5xm" path="res://Data/Loadouts/sword_loadout.tres" id="6_ce02"]
 [ext_resource type="Resource" uid="uid://6e22ys21t62" path="res://Data/Loadouts/axe_loadout.tres" id="7_ce02"]
 [ext_resource type="Texture2D" uid="uid://vme15wsrk7b3" path="res://Data/Sprites/Madness/Headwear/madness_helmet_0.png" id="7_d4t7q"]
+[ext_resource type="Resource" uid="uid://bm7k4v9n2p5xr" path="res://Data/Loadouts/bat_loadout.tres" id="8_ce02"]
+[ext_resource type="Resource" uid="uid://ck8v2n5m7p4xr" path="res://Data/Loadouts/baton_loadout.tres" id="9_ce02"]
 
 [resource]
 script = ExtResource("1_ce02")
@@ -15,6 +17,6 @@ display_name = &"Soldier"
 portrait = ExtResource("7_d4t7q")
 character_scene = ExtResource("5_yv3ft")
 body_tint = Color(1, 0.4, 0.4, 1)
-available_loadouts = Array[ExtResource("2_ce02")]([ExtResource("4_ce02"), ExtResource("6_ce02"), ExtResource("7_ce02")])
+available_loadouts = Array[ExtResource("2_ce02")]([ExtResource("4_ce02"), ExtResource("6_ce02"), ExtResource("7_ce02"), ExtResource("8_ce02"), ExtResource("9_ce02")])
 default_stats = ExtResource("5_ce02")
 metadata/_custom_type_script = "uid://ck1n4t2x9p3qa"

@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://bk9m4v7n2p5xq"]
+
+[ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_bat"]
+[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_bat"]
+[ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="3_bat"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="4_bat"]
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="5_bat"]
+
+[sub_resource type="Resource" id="kf_bat0"]
+script = ExtResource("5_bat")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_bat1"]
+script = ExtResource("5_bat")
+time = 0.15
+rotation_degrees = -90.0
+position_offset = Vector2(10, -80)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_bat2"]
+script = ExtResource("5_bat")
+time = 0.40
+rotation_degrees = 30.0
+position_offset = Vector2(130, 20)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_bat3"]
+script = ExtResource("5_bat")
+time = 0.60
+rotation_degrees = 20.0
+position_offset = Vector2(120, 10)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_bat4"]
+script = ExtResource("5_bat")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="trk_bat_hr"]
+script = ExtResource("4_bat")
+bone_name = &"HandR"
+keyframes = Array[ExtResource("5_bat")]([SubResource("kf_bat0"), SubResource("kf_bat1"), SubResource("kf_bat2"), SubResource("kf_bat3"), SubResource("kf_bat4")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_bat_hl"]
+script = ExtResource("4_bat")
+bone_name = &"HandL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_bat_fr"]
+script = ExtResource("4_bat")
+bone_name = &"FootR"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_bat_fl"]
+script = ExtResource("4_bat")
+bone_name = &"FootL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="clip_bat"]
+script = ExtResource("2_bat")
+clip_name = &"bat_attack"
+duration = 0.65
+tracks = Array[ExtResource("4_bat")]([SubResource("trk_bat_hr"), SubResource("trk_bat_hl"), SubResource("trk_bat_fr"), SubResource("trk_bat_fl")])
+metadata/_custom_type_script = "uid://bs5iod7tqllph"
+
+[sub_resource type="Resource" id="hb_bat"]
+script = ExtResource("1_bat")
+attachment_point = &"HandR"
+size = Vector2(80, 28)
+offset = Vector2(40, 0)
+active_start_time = 0.35
+active_end_time = 0.62
+damage = 18
+daze_damage = 25.0
+knockback = Vector2(300, -100)
+reaction = 1
+attack_type = 0
+metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
+
+[resource]
+script = ExtResource("3_bat")
+move_name = &"bat_attack"
+duration = 0.65
+animation_clip = SubResource("clip_bat")
+hitboxes = Array[ExtResource("1_bat")]([SubResource("hb_bat")])
+metadata/_custom_type_script = "uid://dev7mvsyscumr"

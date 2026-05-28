@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cd9k3n8v2m4pr"]
+[gd_scene load_steps=13 format=3 uid="uid://cd9k3n8v2m4pr"]
 
 [ext_resource type="Script" uid="uid://bn3p7v4w9k2xs" path="res://Scripts/UI/character_select.gd" id="1_cs001"]
 [ext_resource type="Script" uid="uid://ck1n4t2x9p3qa" path="res://Scripts/Resources/Game/character_entry.gd" id="2_cs001"]
 [ext_resource type="Resource" uid="uid://dh5p2k7n4w8tm" path="res://Data/Characters/hero_entry.tres" id="3_cs001"]
-[ext_resource type="Resource" uid="uid://ek4n7p2v8w5xm" path="res://Data/Characters/soldier_entry.tres" id="4_cs001"]
+[ext_resource type="Resource" uid="uid://ppsmn5noqa6u" path="res://Data/Characters/soldier_entry.tres" id="4_cs001"]
+[ext_resource type="Resource" uid="uid://bk4p9n7v2m8xr" path="res://Data/Characters/agent_entry.tres" id="5_cs001"]
+[ext_resource type="Resource" uid="uid://cm7k4p9n2v5xr" path="res://Data/Characters/monk_entry.tres" id="6_cs001"]
 
 [sub_resource type="Animation" id="Animation_enter"]
 resource_name = "enter"
@@ -130,7 +132,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1_cs001")
 portrait_columns = 4
-roster = Array[ExtResource("2_cs001")]([ExtResource("3_cs001"), ExtResource("4_cs001")])
+roster = Array[ExtResource("2_cs001")]([ExtResource("3_cs001"), ExtResource("4_cs001"), ExtResource("5_cs001"), ExtResource("6_cs001")])
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

@@ -22,6 +22,14 @@ MatchSettings="*uid://dq8r2k6f4w9bp"
 AudioManager="*uid://cw7v3n5j8p2dr"
 PlayerInput="*uid://dp4k8n2v6m5xt"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="sanity"

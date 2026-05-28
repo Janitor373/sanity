@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bk9p7n4v2m5xt"]
+
+[ext_resource type="Texture2D" uid="uid://bk7v4n2m9p5xt" path="res://Data/Stages/default_stage_dark.png" id="1_dsd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(2400, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wallL"]
+size = Vector2(80, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wallR"]
+size = Vector2(80, 1200)
+
+[node name="DefaultStageDark" type="Node2D" unique_id=1901490352]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=771131623]
+z_index = -10
+position = Vector2(-4, -240)
+texture = ExtResource("1_dsd")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1185851573]
+collision_layer = 1
+collision_mask = 0
+
+[node name="GroundShape" type="CollisionShape2D" parent="Ground" unique_id=1614067888]
+position = Vector2(0, 320)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=1595925968]
+collision_layer = 1
+collision_mask = 0
+
+[node name="WallLeftShape" type="CollisionShape2D" parent="WallLeft" unique_id=1883999405]
+position = Vector2(-1160, -200)
+shape = SubResource("RectangleShape2D_wallL")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=379433294]
+collision_layer = 1
+collision_mask = 0
+
+[node name="WallRightShape" type="CollisionShape2D" parent="WallRight" unique_id=1857999665]
+position = Vector2(1160, -200)
+shape = SubResource("RectangleShape2D_wallR")
+
+[node name="P1Spawn" type="Node2D" parent="." unique_id=1806611975]
+position = Vector2(-320, 280)
+
+[node name="P2Spawn" type="Node2D" parent="." unique_id=1036138964]
+position = Vector2(320, 280)
+
+[node name="StageCamera" type="Camera2D" parent="." unique_id=1308746797]
+position = Vector2(0, 0)
+zoom = Vector2(0.85, 0.85)

@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var p1_hp_bar: TextureProgressBar = $Top/P1HpBar
-@onready var p2_hp_bar: TextureProgressBar = $Top/P2HpBar
+@onready var p1_hp_bar: ProgressBar = $Top/P1HpBar
+@onready var p2_hp_bar: ProgressBar = $Top/P2HpBar
 @onready var p1_name_label: Label = $Top/P1NameLabel
 @onready var p2_name_label: Label = $Top/P2NameLabel
 @onready var p1_round_pips: HBoxContainer = $Top/P1RoundPips
@@ -29,7 +29,7 @@ func setup(p1_name: String, p2_name: String, p1_max_hp: int, p2_max_hp: int) -> 
 	_refresh_round_label()
 
 func update_hp(player_index: int, current_hp: int) -> void:
-	var bar: TextureProgressBar = p1_hp_bar if player_index == 1 else p2_hp_bar
+	var bar: ProgressBar = p1_hp_bar if player_index == 1 else p2_hp_bar
 	var previous: float = bar.value
 	bar.value = clampf(current_hp, 0.0, bar.max_value)
 	if bar.value < previous and animation_player.has_animation("hp_damage_p%d" % player_index):

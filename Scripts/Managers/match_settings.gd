@@ -22,6 +22,20 @@ var last_round_winner: int = 0
 var character_roster: Array[CharacterEntry] = []
 var stage_roster: Array[StageData] = []
 
+func _ready() -> void:
+	character_roster = [
+		preload("res://Data/Characters/hero_entry.tres"),
+		preload("res://Data/Characters/soldier_entry.tres"),
+		preload("res://Data/Characters/agent_entry.tres"),
+		preload("res://Data/Characters/monk_entry.tres"),
+	]
+	stage_roster = [
+		preload("res://Data/Stages/default_stage_entry.tres"),
+		preload("res://Data/Stages/default_stage_dark_entry.tres"),
+		preload("res://Data/Stages/desert_stage_entry.tres"),
+		preload("res://Data/Stages/desert_stage_dark_entry.tres"),
+	]
+
 func reset_match() -> void:
 	player1_round_wins = 0
 	player2_round_wins = 0

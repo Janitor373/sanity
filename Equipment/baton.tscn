@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dk7v2n5m4p8xr"]
+
+[ext_resource type="Script" uid="uid://bgum3uvay3uxi" path="res://Scripts/Equipment/equipment.gd" id="1_btn"]
+[ext_resource type="Resource" uid="uid://cn5k8v2m7p4xr" path="res://Data/Equipment/baton_data.tres" id="2_btn"]
+[ext_resource type="Texture2D" uid="uid://ta148c3g3t1f" path="res://Data/Sprites/Madness/Weapons/madness_baton_0.png" id="3_btn"]
+
+[node name="Baton" type="Node2D" unique_id=753678161]
+z_index = -1
+script = ExtResource("1_btn")
+data = ExtResource("2_btn")
+
+[node name="Baton" type="Sprite2D" parent="." unique_id=118001607]
+position = Vector2(15, -35)
+rotation = -1.5707964
+texture = ExtResource("3_btn")

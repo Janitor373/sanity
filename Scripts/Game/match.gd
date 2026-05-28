@@ -196,14 +196,32 @@ func _resolve_time_out() -> void:
 			winner = 2
 
 	if winner == 0:
+		MatchSettings.register_round_winner(0)
+		hud.refresh_score()
 		hud.show_center_message("DRAW", "ko_announcement")
 		await get_tree().create_timer(ROUND_END_DELAY).timeout
+		round_resolving = false
 		MatchSettings.advance_round()
 		_reset_fighters()
 		_start_round()
 		return
 
-	_end_round(winner)
+	MatchSettings.register_round_winner(winner)
+	hud.refresh_score()
+	hud.show_center_message("KO", "ko_announcement")
+	AudioManager.play_ko()
+	AudioManager.play_round_end()
+
+	await get_tree().create_timer(ROUND_END_DELAY).timeout
+
+	if MatchSettings.is_match_over():
+		_finish_match()
+		return
+
+	round_resolving = false
+	MatchSettings.advance_round()
+	_reset_fighters()
+	_start_round()
 
 func _finish_match() -> void:
 	if hud != null and hud.has_method("show_center_message"):

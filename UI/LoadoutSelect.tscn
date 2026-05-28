@@ -144,9 +144,9 @@ text = "P1"
 horizontal_alignment = 1
 
 [node name="Portrait" type="TextureRect" parent="Layout/P1Side"]
-custom_minimum_size = Vector2(0, 280)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-expand_mode = 1
+expand_mode = 0
 stretch_mode = 6
 
 [node name="LoadoutRow" type="HBoxContainer" parent="Layout/P1Side"]
@@ -158,10 +158,10 @@ visible = false
 layout_mode = 2
 
 [node name="LoadoutIcon" type="TextureRect" parent="Layout/P1Side"]
-custom_minimum_size = Vector2(0, 128)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-expand_mode = 1
-stretch_mode = 5
+expand_mode = 0
+stretch_mode = 6
 
 [node name="LoadoutNameLabel" type="Label" parent="Layout/P1Side"]
 layout_mode = 2
@@ -193,9 +193,9 @@ text = "P2"
 horizontal_alignment = 1
 
 [node name="Portrait" type="TextureRect" parent="Layout/P2Side"]
-custom_minimum_size = Vector2(0, 280)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-expand_mode = 1
+expand_mode = 0
 stretch_mode = 6
 
 [node name="LeftArrow" type="Label" parent="Layout/P2Side"]
@@ -203,10 +203,10 @@ visible = false
 layout_mode = 2
 
 [node name="LoadoutIcon" type="TextureRect" parent="Layout/P2Side"]
-custom_minimum_size = Vector2(0, 128)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-expand_mode = 1
-stretch_mode = 5
+expand_mode = 0
+stretch_mode = 6
 
 [node name="LoadoutNameLabel" type="Label" parent="Layout/P2Side"]
 layout_mode = 2
