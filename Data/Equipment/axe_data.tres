@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="EquipmentData" load_steps=2 format=3 uid="uid://c9k4n8v7m2pxr"]
+[gd_resource type="Resource" script_class="EquipmentData" format=3 uid="uid://dak4n8v7m2pxr"]
 
 [ext_resource type="Script" uid="uid://jmt01psbvs84" path="res://Scripts/Resources/Equipment/equipment_data.gd" id="1_axd"]
 
 [resource]
 script = ExtResource("1_axd")
 equipment_type = 1
-attachment_point = &"HandRAttachmentPoint"
 local_offset = Vector2(0, -15)
 local_rotation_degrees = 0.0
 local_z_index_offset = 0
