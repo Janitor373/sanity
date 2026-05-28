@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bgum3uvay3uxi" path="res://Scripts/Equipment/equipment.gd" id="1_axs"]
 [ext_resource type="Resource" uid="uid://dak4n8v7m2pxr" path="res://Data/Equipment/axe_data.tres" id="2_axs"]
 [ext_resource type="Texture2D" uid="uid://da03jw74ntkbg" path="res://Data/Sprites/Madness/Weapons/madness_axe_0.png" id="3_vbvcj"]
+[ext_resource type="Texture2D" uid="uid://cl0n227ll6fgg" path="res://Data/Sprites/Madness/Weapons/madness_axe_0_angled_0.png" id="4_73n0y"]
+[ext_resource type="Texture2D" uid="uid://g3st0o4ghi1r" path="res://Data/Sprites/Madness/Weapons/madness_axe_0_angled_1.png" id="5_tbbkb"]
+[ext_resource type="Texture2D" uid="uid://crtudwl15b6ir" path="res://Data/Sprites/Madness/Weapons/madness_axe_0_angled_2.png" id="6_307xj"]
+[ext_resource type="Texture2D" uid="uid://biklolyhiu7qd" path="res://Data/Sprites/Madness/Weapons/madness_axe_0_angled_3.png" id="7_y8jc1"]
 
 [node name="Axe" type="Node2D" unique_id=753678159]
 script = ExtResource("1_axs")
@@ -12,3 +16,27 @@ data = ExtResource("2_axs")
 position = Vector2(15, -49)
 rotation = -1.5707964
 texture = ExtResource("3_vbvcj")
+
+[node name="Angeled_0" type="Sprite2D" parent="." unique_id=2060737303]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("4_73n0y")
+
+[node name="Angeled_1" type="Sprite2D" parent="." unique_id=616377422]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("5_tbbkb")
+
+[node name="Angeled_2" type="Sprite2D" parent="." unique_id=436265343]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("6_307xj")
+
+[node name="Angeled_3" type="Sprite2D" parent="." unique_id=1733417146]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("7_y8jc1")

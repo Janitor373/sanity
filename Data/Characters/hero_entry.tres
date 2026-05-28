@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cm77y316gn4yo" path="res://Characters/Humanoid/Madness/versus_hero.tscn" id="5_iqxs0"]
 [ext_resource type="Resource" uid="uid://ce4n8k2v7p5xm" path="res://Data/Loadouts/sword_loadout.tres" id="6_ce01"]
 [ext_resource type="Resource" uid="uid://6e22ys21t62" path="res://Data/Loadouts/axe_loadout.tres" id="7_ce01"]
+[ext_resource type="Resource" uid="uid://dmff34fn5q2au" path="res://Data/Loadouts/knife_loadout.tres" id="7_fytmg"]
 [ext_resource type="Texture2D" uid="uid://c2opbg8wkbf8f" path="res://Data/Sprites/Madness/Headwear/madness_bandana_1.png" id="7_iqxs0"]
-[ext_resource type="Resource" uid="uid://bm7k4v9n2p5xr" path="res://Data/Loadouts/bat_loadout.tres" id="8_ce01"]
+[ext_resource type="Resource" uid="uid://bm7k4wan2p5xr" path="res://Data/Loadouts/bat_loadout.tres" id="8_ce01"]
 [ext_resource type="Resource" uid="uid://ck8v2n5m7p4xr" path="res://Data/Loadouts/baton_loadout.tres" id="9_ce01"]
 
 [resource]
@@ -16,6 +17,6 @@ script = ExtResource("1_ce01")
 display_name = &"Hero"
 portrait = ExtResource("7_iqxs0")
 character_scene = ExtResource("5_iqxs0")
-available_loadouts = Array[ExtResource("2_ce01")]([ExtResource("4_ce01"), ExtResource("6_ce01"), ExtResource("7_ce01"), ExtResource("8_ce01"), ExtResource("9_ce01")])
+available_loadouts = Array[ExtResource("2_ce01")]([ExtResource("4_ce01"), ExtResource("6_ce01"), ExtResource("7_ce01"), ExtResource("8_ce01"), ExtResource("9_ce01"), ExtResource("7_fytmg")])
 default_stats = ExtResource("5_ce01")
 metadata/_custom_type_script = "uid://ck1n4t2x9p3qa"

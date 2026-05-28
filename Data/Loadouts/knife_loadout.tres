@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LoadoutData" format=3 uid="uid://dmff34fn5q2au"]
+
+[ext_resource type="Texture2D" uid="uid://ggef7vueg8ue" path="res://Data/Sprites/Madness/Weapons/madness_knife_0.png" id="1_k7gl7"]
+[ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="2_itula"]
+[ext_resource type="PackedScene" uid="uid://d38ax3tik6awo" path="res://Equipment/knife.tscn" id="3_itula"]
+
+[resource]
+script = ExtResource("2_itula")
+display_name = &"Knife"
+icon = ExtResource("1_k7gl7")
+weapon_scene = ExtResource("3_itula")
+metadata/_custom_type_script = "uid://dn2v8r5w7m4hk"

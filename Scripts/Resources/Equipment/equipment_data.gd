@@ -10,7 +10,8 @@ enum EquipmentType {
 	DAGGER,
 	BOW,
 	BAT,
-	BATON
+	BATON,
+	KNIFE
 }
 
 @export var equipment_type: EquipmentType = EquipmentType.NONE

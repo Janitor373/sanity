@@ -1,0 +1,106 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://ciu6rahafadkx"]
+
+[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="1_1v0w2"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="2_2nnvh"]
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="3_4ncsy"]
+[ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="4_mbkam"]
+[ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="5_h0seg"]
+
+[sub_resource type="Resource" id="kf_sw0"]
+script = ExtResource("3_4ncsy")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_sw1"]
+script = ExtResource("3_4ncsy")
+time = 0.15
+rotation_degrees = -35.0
+position_offset = Vector2(-25, -20)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_sw2"]
+script = ExtResource("3_4ncsy")
+time = 0.35
+rotation_degrees = 25.0
+position_offset = Vector2(160, -30)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_sw3"]
+script = ExtResource("3_4ncsy")
+time = 0.55
+rotation_degrees = 15.0
+position_offset = Vector2(145, -18)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_sw4"]
+script = ExtResource("3_4ncsy")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="trk_sw_hr"]
+script = ExtResource("2_2nnvh")
+bone_name = &"HandR"
+keyframes = Array[ExtResource("3_4ncsy")]([SubResource("kf_sw0"), SubResource("kf_sw1"), SubResource("kf_sw2"), SubResource("kf_sw3"), SubResource("kf_sw4")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_sw_hl"]
+script = ExtResource("2_2nnvh")
+bone_name = &"HandL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_sw_fr"]
+script = ExtResource("2_2nnvh")
+bone_name = &"FootR"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_sw_fl"]
+script = ExtResource("2_2nnvh")
+bone_name = &"FootL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="Resource_p77jk"]
+script = ExtResource("3_4ncsy")
+z_index_offset = -1
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_wdq1v"]
+script = ExtResource("3_4ncsy")
+time = 0.35
+z_index_offset = -1
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_73xsg"]
+script = ExtResource("3_4ncsy")
+time = 1.0
+z_index_offset = -1
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_em6ls"]
+script = ExtResource("2_2nnvh")
+bone_name = &"Sword"
+keyframes = Array[ExtResource("3_4ncsy")]([SubResource("Resource_p77jk"), SubResource("Resource_wdq1v"), SubResource("Resource_73xsg")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="clip_sw"]
+script = ExtResource("1_1v0w2")
+clip_name = &"sword_attack"
+tracks = Array[ExtResource("2_2nnvh")]([SubResource("trk_sw_hr"), SubResource("trk_sw_hl"), SubResource("trk_sw_fr"), SubResource("trk_sw_fl"), SubResource("Resource_em6ls")])
+metadata/_custom_type_script = "uid://bs5iod7tqllph"
+
+[sub_resource type="Resource" id="hb_sw"]
+script = ExtResource("4_mbkam")
+attachment_point = &"HandR"
+shape_type = null
+size = Vector2(150, 44)
+offset = Vector2(30, 0)
+active_start_time = 0.1
+active_end_time = 0.3
+reaction = null
+attack_type = null
+metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
+
+[resource]
+script = ExtResource("5_h0seg")
+move_name = &"knife_attack"
+animation_clip = SubResource("clip_sw")
+hitboxes = Array[ExtResource("4_mbkam")]([SubResource("hb_sw")])
+metadata/_custom_type_script = "uid://dev7mvsyscumr"

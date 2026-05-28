@@ -3,12 +3,40 @@
 [ext_resource type="Script" uid="uid://bgum3uvay3uxi" path="res://Scripts/Equipment/equipment.gd" id="1_sw01"]
 [ext_resource type="Resource" uid="uid://cs7w4n2lap3xm" path="res://Data/Equipment/sword_data.tres" id="2_sw01"]
 [ext_resource type="Texture2D" uid="uid://d1d4wuj2actjx" path="res://Data/Sprites/Madness/Weapons/madness_sword_0.png" id="3_p8kl4"]
+[ext_resource type="Texture2D" uid="uid://lpqqrdgp3aen" path="res://Data/Sprites/Madness/Weapons/madness_sword_0_angled_0.png" id="4_he8ag"]
+[ext_resource type="Texture2D" uid="uid://s0lqslebc6t2" path="res://Data/Sprites/Madness/Weapons/madness_sword_0_angled_1.png" id="5_r0gtv"]
+[ext_resource type="Texture2D" uid="uid://cfpge6gf7dxqq" path="res://Data/Sprites/Madness/Weapons/madness_sword_0_angled_2.png" id="6_d22hn"]
+[ext_resource type="Texture2D" uid="uid://skrq18k8kg24" path="res://Data/Sprites/Madness/Weapons/madness_sword_0_angled_3.png" id="7_iq4ky"]
 
 [node name="Sword" type="Node2D" unique_id=936472240]
 script = ExtResource("1_sw01")
 data = ExtResource("2_sw01")
 
-[node name="Default" type="Sprite2D" parent="." unique_id=1028090750]
-self_modulate = Color(0.78, 0.8, 0.85, 1)
-position = Vector2(56, 1)
+[node name="Default" type="Sprite2D" parent="." unique_id=494135481]
+position = Vector2(15, -49)
+rotation = -1.5707964
 texture = ExtResource("3_p8kl4")
+
+[node name="Angeled_0" type="Sprite2D" parent="." unique_id=1821363071]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("4_he8ag")
+
+[node name="Angeled_1" type="Sprite2D" parent="." unique_id=2049620953]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("5_r0gtv")
+
+[node name="Angeled_2" type="Sprite2D" parent="." unique_id=253197095]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("6_d22hn")
+
+[node name="Angeled_3" type="Sprite2D" parent="." unique_id=313113913]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("7_iq4ky")

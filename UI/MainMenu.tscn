@@ -1,6 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb7m4k2v9n8pt"]
+[gd_scene format=3 uid="uid://cb7m4k2wan8pt"]
 
-[ext_resource type="Script" uid="uid://bv9k4x2m7n5pq" path="res://Scripts/UI/main_menu.gd" id="1_mm001"]
+[ext_resource type="Script" uid="uid://bwak4x2m7n5pq" path="res://Scripts/UI/main_menu.gd" id="1_mm001"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 96
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_RESET"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitleLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_intro"]
 resource_name = "intro"
@@ -69,115 +102,80 @@ tracks/0/path = NodePath("TitleLabel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.0, 2.0),
+"times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.04, 1.04), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_RESET"]
-resource_name = "RESET"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TitleLabel:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mm"]
 _data = {
-"RESET": SubResource("Animation_RESET"),
-"intro": SubResource("Animation_intro"),
-"outro": SubResource("Animation_outro"),
-"title_pulse": SubResource("Animation_title_pulse")
+&"RESET": SubResource("Animation_RESET"),
+&"intro": SubResource("Animation_intro"),
+&"outro": SubResource("Animation_outro"),
+&"title_pulse": SubResource("Animation_title_pulse")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_title"]
-font_size = 96
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1914397524]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mm001")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=520036527]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.07, 0.07, 0.1, 1)
 
-[node name="TitleLabel" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="." unique_id=844845554]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.0
 offset_left = -400.0
 offset_top = 80.0
 offset_right = 400.0
 offset_bottom = 220.0
 grow_horizontal = 2
+grow_vertical = 0
 pivot_offset = Vector2(400, 70)
 text = "SANITY"
 label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=230966385]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 120.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2141979553]
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=128129697]
 custom_minimum_size = Vector2(360, 64)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "PLAY"
 
-[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(360, 64)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "OPTIONS"
-
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1184470245]
 custom_minimum_size = Vector2(360, 64)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_mm")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=78149641]
+libraries/ = SubResource("AnimationLibrary_mm")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EquipmentData" format=3 uid="uid://bqk137kol17by"]
+
+[ext_resource type="Script" uid="uid://jmt01psbvs84" path="res://Scripts/Resources/Equipment/equipment_data.gd" id="1_hb5rs"]
+
+[resource]
+script = ExtResource("1_hb5rs")
+equipment_type = 9
+local_offset = Vector2(0, -15)
+metadata/_custom_type_script = "uid://jmt01psbvs84"

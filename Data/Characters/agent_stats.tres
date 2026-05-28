@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_st03")
+max_stamina = 95.0
 max_hp = 90
 power = 14
 attack = 14
@@ -11,4 +12,3 @@ defense = 8
 daze_threshold = 90.0
 daze_recovery_rate = 18.0
 move_speed = 520.0
-max_stamina = 95.0

@@ -5,8 +5,5 @@
 [resource]
 script = ExtResource("1_btd")
 equipment_type = 7
-attachment_point = &"HandRAttachmentPoint"
 local_offset = Vector2(0, -20)
-local_rotation_degrees = 0.0
-local_z_index_offset = 0
 metadata/_custom_type_script = "uid://jmt01psbvs84"

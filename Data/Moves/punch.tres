@@ -61,6 +61,5 @@ metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
 script = ExtResource("2_40x4p")
 move_name = &"punch"
 animation_clip = SubResource("Resource_fqoup")
-duration = 0.9
 hitboxes = Array[ExtResource("1_7lr1h")]([SubResource("Resource_3aiha")])
 metadata/_custom_type_script = "uid://dev7mvsyscumr"

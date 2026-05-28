@@ -3,12 +3,47 @@
 [ext_resource type="Script" uid="uid://bgum3uvay3uxi" path="res://Scripts/Equipment/equipment.gd" id="1_bat"]
 [ext_resource type="Resource" uid="uid://blam4v7n2p5xt" path="res://Data/Equipment/bat_data.tres" id="2_bat"]
 [ext_resource type="Texture2D" uid="uid://21uuvtbl7ftl" path="res://Data/Sprites/Madness/Weapons/madness_bat_0.png" id="3_bat"]
+[ext_resource type="Texture2D" uid="uid://ca6gx288kcawv" path="res://Data/Sprites/Madness/Weapons/madness_bat_0_angled_0.png" id="4_15uuq"]
+[ext_resource type="Texture2D" uid="uid://bv3y5bsockdwb" path="res://Data/Sprites/Madness/Weapons/madness_bat_0_angled_1.png" id="5_buwcq"]
+[ext_resource type="Texture2D" uid="uid://cf5elp8uobksg" path="res://Data/Sprites/Madness/Weapons/madness_bat_0_angled_2.png" id="6_vnas6"]
+[ext_resource type="Texture2D" uid="uid://da1h0lv1g3dau" path="res://Data/Sprites/Madness/Weapons/madness_bat_0_angled_3.png" id="7_jrm4f"]
+[ext_resource type="Texture2D" uid="uid://v3ffc02mbkrv" path="res://Data/Sprites/Madness/Weapons/madness_bat_0_angled_4.png" id="8_jjmfb"]
 
 [node name="Bat" type="Node2D" unique_id=753678160]
 script = ExtResource("1_bat")
 data = ExtResource("2_bat")
 
-[node name="Default" type="Sprite2D" parent="." unique_id=118001606]
-position = Vector2(20, -55)
+[node name="Default" type="Sprite2D" parent="." unique_id=1880630213]
+position = Vector2(15, -49)
 rotation = -1.5707964
 texture = ExtResource("3_bat")
+
+[node name="Angeled_0" type="Sprite2D" parent="." unique_id=1846184570]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("4_15uuq")
+
+[node name="Angeled_1" type="Sprite2D" parent="." unique_id=1723945730]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("5_buwcq")
+
+[node name="Angeled_2" type="Sprite2D" parent="." unique_id=1572360769]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("6_vnas6")
+
+[node name="Angeled_3" type="Sprite2D" parent="." unique_id=791302495]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("7_jrm4f")
+
+[node name="Angeled_4" type="Sprite2D" parent="." unique_id=2135058354]
+visible = false
+position = Vector2(15, -49)
+rotation = -1.5707964
+texture = ExtResource("8_jjmfb")

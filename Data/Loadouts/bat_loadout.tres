@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="1_batl"]
 [ext_resource type="Texture2D" uid="uid://21uuvtbl7ftl" path="res://Data/Sprites/Madness/Weapons/madness_bat_0.png" id="2_batl"]
-[ext_resource type="PackedScene" uid="uid://bm7k4v9n2p5xt" path="res://Equipment/bat.tscn" id="3_batl"]
+[ext_resource type="PackedScene" uid="uid://bm7k4wan2p5xt" path="res://Equipment/bat.tscn" id="3_batl"]
 
 [resource]
 script = ExtResource("1_batl")
