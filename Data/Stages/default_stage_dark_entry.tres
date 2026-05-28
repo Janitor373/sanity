@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StageData" load_steps=4 format=3 uid="uid://bk9p7n4v2m5xr"]
+
+[ext_resource type="Script" uid="uid://b3k7p9m2r5x8t" path="res://Scripts/Resources/Game/stage_data.gd" id="1_sd03"]
+[ext_resource type="PackedScene" uid="uid://bk9p7n4v2m5xt" path="res://Stages/default_stage_dark.tscn" id="2_sd03"]
+[ext_resource type="Texture2D" uid="uid://bk7v4n2m9p5xt" path="res://Data/Stages/default_stage_dark.png" id="3_sd03"]
+
+[resource]
+script = ExtResource("1_sd03")
+display_name = &"Default Arena (Night)"
+preview = ExtResource("3_sd03")
+stage_scene = ExtResource("2_sd03")
+music_stream = null
+metadata/_custom_type_script = "uid://b3k7p9m2r5x8t"

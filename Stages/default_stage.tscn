@@ -12,28 +12,22 @@ size = Vector2(80, 1200)
 size = Vector2(80, 1200)
 
 [node name="DefaultStage" type="Node2D" unique_id=1901490351]
-metadata/_edit_horizontal_guides_ = [15.0]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=771131622]
 z_index = -10
 position = Vector2(-4, -240)
 texture = ExtResource("1_mq3q0")
 
-[node name="GroundVisual" type="ColorRect" parent="." unique_id=1756853776]
-offset_left = -1200.0
-offset_top = 320.0
-offset_right = 1200.0
-offset_bottom = 400.0
-color = Color(0.25, 0.18, 0.12, 1)
-
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1185851572]
+collision_layer = 1
 collision_mask = 0
 
 [node name="GroundShape" type="CollisionShape2D" parent="Ground" unique_id=1614067887]
-position = Vector2(0, 360)
+position = Vector2(0, 320)
 shape = SubResource("RectangleShape2D_ground")
 
 [node name="WallLeft" type="StaticBody2D" parent="." unique_id=1595925967]
+collision_layer = 1
 collision_mask = 0
 
 [node name="WallLeftShape" type="CollisionShape2D" parent="WallLeft" unique_id=1883999404]
@@ -41,6 +35,7 @@ position = Vector2(-1160, -200)
 shape = SubResource("RectangleShape2D_wallL")
 
 [node name="WallRight" type="StaticBody2D" parent="." unique_id=379433293]
+collision_layer = 1
 collision_mask = 0
 
 [node name="WallRightShape" type="CollisionShape2D" parent="WallRight" unique_id=1857999664]
@@ -48,11 +43,11 @@ position = Vector2(1160, -200)
 shape = SubResource("RectangleShape2D_wallR")
 
 [node name="P1Spawn" type="Node2D" parent="." unique_id=1806611974]
-position = Vector2(-380, 200)
+position = Vector2(-320, 280)
 
 [node name="P2Spawn" type="Node2D" parent="." unique_id=1036138963]
-position = Vector2(380, 200)
+position = Vector2(320, 280)
 
 [node name="StageCamera" type="Camera2D" parent="." unique_id=1308746796]
-position = Vector2(0, 100)
+position = Vector2(0, 0)
 zoom = Vector2(0.85, 0.85)

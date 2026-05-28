@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StageData" load_steps=4 format=3 uid="uid://cm5k8v4n2p7xr"]
+
+[ext_resource type="Script" uid="uid://b3k7p9m2r5x8t" path="res://Scripts/Resources/Game/stage_data.gd" id="1_sd04"]
+[ext_resource type="PackedScene" uid="uid://cm5k8v4n2p7xt" path="res://Stages/desert_stage_dark.tscn" id="2_sd04"]
+[ext_resource type="Texture2D" uid="uid://cm5k8v4n2p7xs" path="res://Data/Stages/dessert_stage_dark.png" id="3_sd04"]
+
+[resource]
+script = ExtResource("1_sd04")
+display_name = &"Desert Pit (Night)"
+preview = ExtResource("3_sd04")
+stage_scene = ExtResource("2_sd04")
+music_stream = null
+metadata/_custom_type_script = "uid://b3k7p9m2r5x8t"

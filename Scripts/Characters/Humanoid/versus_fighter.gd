@@ -81,8 +81,17 @@ func _attack() -> void:
 	var reach := BASE_ATTACK_RANGE
 	var damage := BASE_ATTACK_DAMAGE
 	if _has_weapon():
-		reach += WEAPON_RANGE_BONUS
-		damage += WEAPON_DAMAGE_BONUS
+		var wtype: int = (body.equipped_weapon as Equipment).get_equipment_type()
+		match wtype:
+			EquipmentData.EquipmentType.BAT:
+				reach += WEAPON_RANGE_BONUS + 20.0
+				damage += WEAPON_DAMAGE_BONUS + 4
+			EquipmentData.EquipmentType.BATON:
+				reach += WEAPON_RANGE_BONUS - 20.0
+				damage += WEAPON_DAMAGE_BONUS - 2
+			_:
+				reach += WEAPON_RANGE_BONUS
+				damage += WEAPON_DAMAGE_BONUS
 	if absf(dx) <= reach and absf(dy) <= ATTACK_VERTICAL_RANGE:
 		opponent.take_fighter_hit(damage)
 		AudioManager.play_hit()
@@ -124,6 +133,10 @@ func _get_attack_move_name() -> StringName:
 			return &"sword_attack"
 		EquipmentData.EquipmentType.AXE:
 			return &"axe_attack"
+		EquipmentData.EquipmentType.BAT:
+			return &"bat_attack"
+		EquipmentData.EquipmentType.BATON:
+			return &"baton_attack"
 		_:
 			return &"punch"
 

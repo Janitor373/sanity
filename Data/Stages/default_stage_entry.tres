@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="StageData" load_steps=3 format=3 uid="uid://fp3n8k5v9m4xr"]
+[gd_resource type="Resource" script_class="StageData" load_steps=4 format=3 uid="uid://fp3n8k5v9m4xr"]
 
 [ext_resource type="Script" uid="uid://b3k7p9m2r5x8t" path="res://Scripts/Resources/Game/stage_data.gd" id="1_sd01"]
 [ext_resource type="PackedScene" uid="uid://bk9p2v7n4w5tm" path="res://Stages/default_stage.tscn" id="2_sd01"]
+[ext_resource type="Texture2D" uid="uid://cbaw6eulig1mx" path="res://Data/Stages/default_stage.png" id="3_sd01"]
 
 [resource]
 script = ExtResource("1_sd01")
 display_name = &"Default Arena"
-preview = null
+preview = ExtResource("3_sd01")
 stage_scene = ExtResource("2_sd01")
 music_stream = null
 metadata/_custom_type_script = "uid://b3k7p9m2r5x8t"

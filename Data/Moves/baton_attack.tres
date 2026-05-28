@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://cn5k8v2m7p4xq"]
+
+[ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_btn"]
+[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_btn"]
+[ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="3_btn"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="4_btn"]
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="5_btn"]
+
+[sub_resource type="Resource" id="kf_btn0"]
+script = ExtResource("5_btn")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_btn1"]
+script = ExtResource("5_btn")
+time = 0.10
+rotation_degrees = -40.0
+position_offset = Vector2(80, -40)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_btn2"]
+script = ExtResource("5_btn")
+time = 0.22
+rotation_degrees = 15.0
+position_offset = Vector2(140, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_btn3"]
+script = ExtResource("5_btn")
+time = 0.38
+rotation_degrees = 10.0
+position_offset = Vector2(130, -5)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_btn4"]
+script = ExtResource("5_btn")
+time = 0.7
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="trk_btn_hr"]
+script = ExtResource("4_btn")
+bone_name = &"HandR"
+keyframes = Array[ExtResource("5_btn")]([SubResource("kf_btn0"), SubResource("kf_btn1"), SubResource("kf_btn2"), SubResource("kf_btn3"), SubResource("kf_btn4")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_btn_hl"]
+script = ExtResource("4_btn")
+bone_name = &"HandL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_btn_fr"]
+script = ExtResource("4_btn")
+bone_name = &"FootR"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="trk_btn_fl"]
+script = ExtResource("4_btn")
+bone_name = &"FootL"
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="clip_btn"]
+script = ExtResource("2_btn")
+clip_name = &"baton_attack"
+duration = 0.38
+tracks = Array[ExtResource("4_btn")]([SubResource("trk_btn_hr"), SubResource("trk_btn_hl"), SubResource("trk_btn_fr"), SubResource("trk_btn_fl")])
+metadata/_custom_type_script = "uid://bs5iod7tqllph"
+
+[sub_resource type="Resource" id="hb_btn"]
+script = ExtResource("1_btn")
+attachment_point = &"HandR"
+size = Vector2(44, 18)
+offset = Vector2(20, 0)
+active_start_time = 0.14
+active_end_time = 0.32
+damage = 11
+daze_damage = 12.0
+knockback = Vector2(150, -50)
+reaction = 0
+attack_type = 0
+metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
+
+[resource]
+script = ExtResource("3_btn")
+move_name = &"baton_attack"
+duration = 0.38
+animation_clip = SubResource("clip_btn")
+hitboxes = Array[ExtResource("1_btn")]([SubResource("hb_btn")])
+metadata/_custom_type_script = "uid://dev7mvsyscumr"

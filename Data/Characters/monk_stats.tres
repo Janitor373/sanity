@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HumanoidStats" load_steps=2 format=3 uid="uid://cm7k4v9n2p5xr"]
+
+[ext_resource type="Script" uid="uid://dkpj0ik4cwot6" path="res://Scripts/Resources/Stats/humanoid_stats.gd" id="1_st04"]
+
+[resource]
+script = ExtResource("1_st04")
+max_hp = 110
+power = 11
+attack = 11
+defense = 13
+daze_threshold = 115.0
+daze_recovery_rate = 10.0
+move_speed = 460.0
+max_stamina = 120.0

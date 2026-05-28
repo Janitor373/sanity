@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LoadoutData" format=3 uid="uid://ck8v2n5m7p4xr"]
+
+[ext_resource type="Script" uid="uid://dn2v8r5w7m4hk" path="res://Scripts/Resources/Game/loadout_data.gd" id="1_btnl"]
+[ext_resource type="Texture2D" uid="uid://ta148c3g3t1f" path="res://Data/Sprites/Madness/Weapons/madness_baton_0.png" id="2_btnl"]
+[ext_resource type="PackedScene" uid="uid://dk7v2n5m4p8xr" path="res://Equipment/baton.tscn" id="3_btnl"]
+
+[resource]
+script = ExtResource("1_btnl")
+display_name = &"Baton"
+icon = ExtResource("2_btnl")
+weapon_scene = ExtResource("3_btnl")
+metadata/_custom_type_script = "uid://dn2v8r5w7m4hk"
