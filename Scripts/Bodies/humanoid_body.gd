@@ -20,19 +20,20 @@ var leg_r_hp: float = 0.0
 #@export var walk_foot_tilt_degrees: float = 8.0
 #@export var walk_arm_swing_degrees: float = 20.0
 @export var walk_bob_amount: float = 3.0
-@export var walk_torso_tilt_degrees: float = 6.0
+@export var walk_torso_tilt_degrees: float = 3.0
 @export var walk_hip_swing_degrees: float = 3.0
 @onready var hip_sprite: Sprite2D = $HumanoidSkeleton/Root/Hip/HipSprite
 
 @export var walk_hand_swing_x: float = 10.0
 @export var walk_hand_swing_y: float = 3.0
-@export var walk_foot_swing_x: float = 12.0
+@export var walk_foot_swing_x: float = 4.0
 @export var walk_foot_lift_y: float = 4.0
 
 @export var idle_speed: float = 2.0
 @export var idle_bob_amount: float = 2.0
-@export var idle_sway_degrees: float = 4.0
+@export var idle_sway_degrees: float = 2.0
 @export var idle_head_counter_degrees: float = 2.0
+@export var idle_skull_bob: float = 5.0
 
 @onready var hip: Bone2D = $HumanoidSkeleton/Root/Hip
 @onready var torso: Bone2D = $HumanoidSkeleton/Root/Hip/Torso
@@ -162,12 +163,14 @@ func apply_rest_pose() -> void:
 		equipped_shield.z_index = default_part_z.get("Shield", equipped_shield.z_index)
 
 func apply_idle_pose(_delta: float) -> void:
-	var bob := sin(time * idle_speed) * idle_bob_amount
+	var hip_bob := sin(time * idle_speed) * idle_bob_amount
+	var skull_bob := sin(time * idle_speed) * idle_skull_bob
 	var sway := sin(time * idle_speed) * deg_to_rad(idle_sway_degrees)
 	var counter := sin(time * idle_speed) * deg_to_rad(idle_head_counter_degrees)
-
-	hip.position.y += bob
+	
+	hip.position.y += hip_bob
 	torso.rotation += sway * 0.5
+	skull.position.y += skull_bob
 	skull.rotation += counter
 
 	hand_l.rotation += sway * 0.5
@@ -221,7 +224,7 @@ func apply_locomotion_pose(_delta: float) -> void:
 	var torso_tilt: float = deg_to_rad(walk_torso_tilt_degrees)
 	var hip_sway: float = deg_to_rad(walk_hip_swing_degrees)
 	var bob: float = abs(sin(locomotion_time)) * walk_bob_amount
-
+	
 	hip.position.y += bob
 	hip_sprite.rotation += cycle * hip_sway
 
