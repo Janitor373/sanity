@@ -172,6 +172,9 @@ func receive_hit(hitbox: Hitbox, hurtbox: Hurtbox) -> void:
 	hp -= final_damage
 
 	apply_hit_knockback(hitbox)
+	
+	if(is_dazed == true):
+		exit_dazed_state()
 	add_daze(hitbox.daze_damage, hitbox.attacker)
 
 	if AudioManager != null:

@@ -10,5 +10,5 @@ power = 11
 attack = 11
 defense = 13
 daze_threshold = 115.0
-daze_recovery_rate = 10.0
-move_speed = 460.0
+daze_recovery_rate = 5.0
+move_speed = 600.0

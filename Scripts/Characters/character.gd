@@ -87,9 +87,12 @@ func receive_hit(hitbox: Hitbox, hurtbox: Hurtbox) -> void:
 
 	if hp <= 0:
 		die(hitbox.attacker)
-
+	
+	if(is_dazed == true):
+		exit_dazed_state()
+		
 	add_daze(hitbox.daze_damage, hitbox.attacker)
-
+	
 func die(_killer = null) -> void:
 	print(name, " died.")
 	if AudioManager != null:

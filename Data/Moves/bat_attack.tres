@@ -203,7 +203,7 @@ active_start_time = 0.35
 active_end_time = 0.62
 damage = 30
 daze_damage = 50.0
-knockback = Vector2(800, -100)
+knockback = Vector2(800, 0)
 reaction = 1
 metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
 
