@@ -4,7 +4,7 @@ const CHARACTER_SELECT_SCENE := "res://UI/CharacterSelect.tscn"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var play_button: Button = $CenterContainer/VBoxContainer/PlayButton
-@onready var options_button: Button = $CenterContainer/VBoxContainer/OptionsButton
+#@onready var options_button: Button = $CenterContainer/VBoxContainer/OptionsButton
 @onready var quit_button: Button = $CenterContainer/VBoxContainer/QuitButton
 @onready var title_label: Label = $TitleLabel
 
@@ -20,10 +20,9 @@ func _ready() -> void:
 	AudioManager.play_menu_music()
 
 	play_button.pressed.connect(_on_play_pressed)
-	options_button.pressed.connect(_on_options_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 
-	for btn in [play_button, options_button, quit_button]:
+	for btn in [play_button, quit_button]:
 		btn.focus_entered.connect(_on_focus_navigate)
 
 func _on_play_pressed() -> void:

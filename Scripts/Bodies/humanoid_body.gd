@@ -201,8 +201,8 @@ func apply_part_presentation(part_name: StringName, sprite_mode: StringName, ske
 
 func apply_constraints() -> void:
 	clamp_bone_deg(skull, -35.0, 35.0)
-	clamp_bone_deg(hand_l, -40.0, 30.0)
-	clamp_bone_deg(hand_r, -140, 140)
+	clamp_bone_deg(hand_l, -240.0, 240.0)
+	clamp_bone_deg(hand_r, -240.0, 240.0)
 	clamp_bone_deg(foot_l, -50.0, 50.0)
 	clamp_bone_deg(foot_r, -50.0, 50.0)
 

@@ -10,6 +10,8 @@ extends Node
 @export var hit_sound: AudioStream
 @export var match_win: AudioStream
 @export var menu_music: AudioStream
+@export var player_hit_sounds: Array[AudioStream] = []
+@export var death_grunt: AudioStream
 
 var sfx_player: AudioStreamPlayer = null
 var music_player: AudioStreamPlayer = null
@@ -82,3 +84,34 @@ func play_match_win() -> void:
 
 func play_menu_music() -> void:
 	play_music(menu_music)
+
+func play_stream(stream: AudioStream, volume_db: float = 0.0, pitch_scale: float = 1.0) -> void:
+	if stream == null:
+		return
+
+	var player := AudioStreamPlayer.new()
+	player.stream = stream
+	player.bus = "Master"
+	player.volume_db = volume_db
+	player.pitch_scale = pitch_scale
+	add_child(player)
+	player.finished.connect(player.queue_free)
+	player.play()
+
+func play_random_player_hit() -> void:
+	if player_hit_sounds.is_empty():
+		return
+
+	var valid_sounds: Array[AudioStream] = []
+	for sound in player_hit_sounds:
+		if sound != null:
+			valid_sounds.append(sound)
+
+	if valid_sounds.is_empty():
+		return
+
+	var index: int = randi_range(0, valid_sounds.size() - 1)
+	play_sfx(valid_sounds[index])
+
+func play_death_grunt() -> void:
+	play_sfx(death_grunt)

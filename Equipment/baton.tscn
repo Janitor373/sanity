@@ -17,25 +17,25 @@ position = Vector2(15, -49)
 rotation = -1.5707964
 texture = ExtResource("3_btn")
 
-[node name="Angeled_0" type="Sprite2D" parent="." unique_id=317542635]
+[node name="Angled_0" type="Sprite2D" parent="." unique_id=317542635]
 visible = false
 position = Vector2(15, -49)
 rotation = -1.5707964
 texture = ExtResource("4_c624u")
 
-[node name="Angeled_1" type="Sprite2D" parent="." unique_id=299595184]
+[node name="Angled_1" type="Sprite2D" parent="." unique_id=299595184]
 visible = false
 position = Vector2(15, -49)
 rotation = -1.5707964
 texture = ExtResource("5_pkm20")
 
-[node name="Angeled_2" type="Sprite2D" parent="." unique_id=285525530]
+[node name="Angled_2" type="Sprite2D" parent="." unique_id=285525530]
 visible = false
 position = Vector2(15, -49)
 rotation = -1.5707964
 texture = ExtResource("6_lxa6k")
 
-[node name="Angeled_3" type="Sprite2D" parent="." unique_id=651897949]
+[node name="Angled_3" type="Sprite2D" parent="." unique_id=651897949]
 visible = false
 position = Vector2(15, -49)
 rotation = -1.5707964

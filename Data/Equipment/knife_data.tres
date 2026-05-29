@@ -5,5 +5,7 @@
 [resource]
 script = ExtResource("1_hb5rs")
 equipment_type = 9
-local_offset = Vector2(0, -15)
+local_offset = Vector2(0, -5)
+local_rotation_degrees = 30.0
+local_z_index_offset = -1
 metadata/_custom_type_script = "uid://jmt01psbvs84"

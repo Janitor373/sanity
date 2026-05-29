@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://br0tu0rwiuh4m"]
+
+[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="1_k4ak7"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="2_r3ro5"]
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="3_ebhre"]
+[ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="4_5trbm"]
+[ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="5_nsgna"]
+
+[sub_resource type="Resource" id="kf_gu_hr0"]
+script = ExtResource("3_ebhre")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hr1"]
+script = ExtResource("3_ebhre")
+time = 0.12
+rotation_degrees = 120.0
+position_offset = Vector2(85, -80)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hr2"]
+script = ExtResource("3_ebhre")
+time = 0.88
+rotation_degrees = 90.0
+position_offset = Vector2(85, -70)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="kf_gu_hr3"]
+script = ExtResource("3_ebhre")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="trk_gu_hr"]
+script = ExtResource("2_r3ro5")
+bone_name = &"HandR"
+keyframes = Array[ExtResource("3_ebhre")]([SubResource("kf_gu_hr0"), SubResource("kf_gu_hr1"), SubResource("kf_gu_hr2"), SubResource("kf_gu_hr3")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
+
+[sub_resource type="Resource" id="clip_gu"]
+script = ExtResource("1_k4ak7")
+clip_name = &"guard_armed"
+duration = 0.5
+tracks = Array[ExtResource("2_r3ro5")]([SubResource("trk_gu_hr")])
+metadata/_custom_type_script = "uid://bs5iod7tqllph"
+
+[resource]
+script = ExtResource("5_nsgna")
+move_name = &"guard_armed"
+animation_clip = SubResource("clip_gu")
+duration = 0.5
+metadata/_custom_type_script = "uid://dev7mvsyscumr"

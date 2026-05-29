@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="BoneTrack" format=3 uid="uid://cae4h3bqea7ow"]
+
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="1_wt30h"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="2_wrdld"]
+
+[sub_resource type="Resource" id="Resource_tqyfe"]
+script = ExtResource("1_wt30h")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_ollcu"]
+script = ExtResource("1_wt30h")
+time = 0.4
+rotation_degrees = 10.0
+position_offset = Vector2(20, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_qs3lc"]
+script = ExtResource("1_wt30h")
+time = 1.0
+position_offset = Vector2(-10, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[resource]
+script = ExtResource("2_wrdld")
+bone_name = &"FootL"
+keyframes = Array[ExtResource("1_wt30h")]([SubResource("Resource_tqyfe"), SubResource("Resource_ollcu"), SubResource("Resource_qs3lc")])
+metadata/_custom_type_script = "uid://db1nehhiderd1"
