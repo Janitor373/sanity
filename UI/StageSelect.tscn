@@ -1,9 +1,27 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk4p7n2v5x8mq"]
+[gd_scene format=3 uid="uid://dk4p7n2v5x8mq"]
 
 [ext_resource type="Script" uid="uid://dj4v6n2k8w5pr" path="res://Scripts/UI/stage_select.gd" id="1_ss001"]
-[ext_resource type="Script" uid="uid://b3k7p9m2r5x8t" path="res://Scripts/Resources/Game/stage_data.gd" id="2_ss001"]
-[ext_resource type="Resource" uid="uid://fp3n8k5v9m4xr" path="res://Data/Stages/default_stage_entry.tres" id="3_ss001"]
-[ext_resource type="Resource" uid="uid://gk4p9n7v2m8xr" path="res://Data/Stages/desert_stage_entry.tres" id="4_ss001"]
+[ext_resource type="Script" uid="uid://b3k7qam2r5x8t" path="res://Scripts/Resources/Game/stage_data.gd" id="2_ss001"]
+[ext_resource type="Resource" uid="uid://buosni8npf860" path="res://Data/Stages/default_stage_entry.tres" id="3_ss001"]
+[ext_resource type="Resource" uid="uid://cppuombnigd60" path="res://Data/Stages/desert_stage_entry.tres" id="4_ss001"]
+[ext_resource type="Resource" uid="uid://blap7n4v2m5xr" path="res://Data/Stages/default_stage_dark_entry.tres" id="5_ogm7f"]
+[ext_resource type="Resource" uid="uid://cm5k8v4n2p7xr" path="res://Data/Stages/desert_stage_dark_entry.tres" id="6_bydtq"]
+
+[sub_resource type="Animation" id="Animation_RESET_ss"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_enter_ss"]
 resource_name = "enter"
@@ -53,61 +71,49 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0.3), Color(1, 1, 1, 1.2), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_RESET_ss"]
-resource_name = "RESET"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ss"]
 _data = {
-"RESET": SubResource("Animation_RESET_ss"),
-"enter": SubResource("Animation_enter_ss"),
-"exit": SubResource("Animation_exit_ss"),
-"stage_change": SubResource("Animation_sc_ss")
+&"RESET": SubResource("Animation_RESET_ss"),
+&"enter": SubResource("Animation_enter_ss"),
+&"exit": SubResource("Animation_exit_ss"),
+&"stage_change": SubResource("Animation_sc_ss")
 }
 
-[node name="StageSelect" type="Control"]
+[node name="StageSelect" type="Control" unique_id=1802408194]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ss001")
-stage_roster = Array[ExtResource("2_ss001")]([ExtResource("3_ss001"), ExtResource("4_ss001")])
+stage_roster = Array[ExtResource("2_ss001")]([ExtResource("3_ss001"), ExtResource("4_ss001"), ExtResource("5_ogm7f"), ExtResource("6_bydtq")])
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=588799880]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.08, 0.08, 0.12, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=98946391]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.0
 offset_left = -400.0
 offset_top = 30.0
 offset_right = 400.0
 offset_bottom = 110.0
 grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 56
 text = "STAGE SELECT"
 horizontal_alignment = 1
 
-[node name="Layout" type="VBoxContainer" parent="."]
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1663982669]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,14 +122,16 @@ offset_left = 120.0
 offset_top = 140.0
 offset_right = -120.0
 offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 24
 
-[node name="PreviewPanel" type="Panel" parent="Layout"]
+[node name="PreviewPanel" type="Panel" parent="Layout" unique_id=791266991]
 custom_minimum_size = Vector2(0, 480)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Preview" type="TextureRect" parent="Layout/PreviewPanel"]
+[node name="Preview" type="TextureRect" parent="Layout/PreviewPanel" unique_id=1968192389]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,10 +140,12 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 6
 
-[node name="StageNameLabel" type="Label" parent="Layout/PreviewPanel"]
+[node name="StageNameLabel" type="Label" parent="Layout/PreviewPanel" unique_id=1725056046]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -149,7 +159,7 @@ theme_override_font_sizes/font_size = 36
 text = "..."
 horizontal_alignment = 1
 
-[node name="LeftArrow" type="Label" parent="Layout/PreviewPanel"]
+[node name="LeftArrow" type="Label" parent="Layout/PreviewPanel" unique_id=698114798]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -164,7 +174,7 @@ text = "<"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RightArrow" type="Label" parent="Layout/PreviewPanel"]
+[node name="RightArrow" type="Label" parent="Layout/PreviewPanel" unique_id=1937168618]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -182,13 +192,11 @@ text = ">"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PromptLabel" type="Label" parent="Layout"]
+[node name="PromptLabel" type="Label" parent="Layout" unique_id=336791592]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "LEFT/RIGHT TO BROWSE - ATTACK TO CONFIRM - DEFEND TO BACK"
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ss")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2105304247]
+libraries/ = SubResource("AnimationLibrary_ss")
