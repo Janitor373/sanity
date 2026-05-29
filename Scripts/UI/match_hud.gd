@@ -78,3 +78,9 @@ func _rebuild_pips(container: HBoxContainer, count: int) -> void:
 		pip.custom_minimum_size = Vector2(24, 24)
 		pip.color = Color(0.25, 0.25, 0.25)
 		container.add_child(pip)
+func reset_bars() -> void:
+	animation_player.stop()
+	p1_hp_bar.modulate = Color.WHITE
+	p2_hp_bar.modulate = Color.WHITE
+	p1_hp_bar.value = p1_hp_bar.max_value
+	p2_hp_bar.value = p2_hp_bar.max_value

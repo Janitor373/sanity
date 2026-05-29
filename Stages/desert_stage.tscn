@@ -22,28 +22,29 @@ texture = ExtResource("1_48b0o")
 collision_mask = 0
 
 [node name="GroundShape" type="CollisionShape2D" parent="Ground" unique_id=1917040311]
-position = Vector2(0, 320)
+position = Vector2(-166, 231)
 shape = SubResource("RectangleShape2D_ground_b")
 
 [node name="WallLeft" type="StaticBody2D" parent="." unique_id=1570798877]
 collision_mask = 0
 
 [node name="WallLeftShape" type="CollisionShape2D" parent="WallLeft" unique_id=661370569]
-position = Vector2(-1160, -200)
+position = Vector2(-1370, -196)
 shape = SubResource("RectangleShape2D_wallL_b")
 
 [node name="WallRight" type="StaticBody2D" parent="." unique_id=1333687283]
 collision_mask = 0
 
 [node name="WallRightShape" type="CollisionShape2D" parent="WallRight" unique_id=1586176840]
-position = Vector2(1160, -200)
+position = Vector2(938, -168)
 shape = SubResource("RectangleShape2D_wallR_b")
 
 [node name="P1Spawn" type="Node2D" parent="." unique_id=1337596972]
-position = Vector2(-320, 280)
+position = Vector2(-682, 178)
 
 [node name="P2Spawn" type="Node2D" parent="." unique_id=1988456310]
-position = Vector2(320, 280)
+position = Vector2(340, 178)
 
 [node name="StageCamera" type="Camera2D" parent="." unique_id=1639240796]
+offset = Vector2(-200, -100)
 zoom = Vector2(0.85, 0.85)

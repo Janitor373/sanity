@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cm5k8v4n2p7xt"]
 
-[ext_resource type="Texture2D" uid="uid://cm5k8v4n2p7xs" path="res://Data/Stages/dessert_stage_dark.png" id="1_ddd"]
+[ext_resource type="Texture2D" uid="uid://b28alloqfyjex" path="res://Data/Stages/dessert_stage_dark.png" id="1_ddd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground_d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eeof"]
 size = Vector2(2400, 80)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wallL_d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj400"]
 size = Vector2(80, 1200)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wallR_d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8nbm"]
 size = Vector2(80, 1200)
 
 [node name="DesertStageDark" type="Node2D" unique_id=1381333968]
@@ -18,36 +18,33 @@ z_index = -10
 position = Vector2(8, -109)
 texture = ExtResource("1_ddd")
 
-[node name="Ground" type="StaticBody2D" parent="." unique_id=1826009020]
-collision_layer = 1
+[node name="Ground" type="StaticBody2D" parent="." unique_id=330546413]
 collision_mask = 0
 
-[node name="GroundShape" type="CollisionShape2D" parent="Ground" unique_id=1917040312]
-position = Vector2(0, 320)
-shape = SubResource("RectangleShape2D_ground_d")
+[node name="GroundShape" type="CollisionShape2D" parent="Ground" unique_id=1513582655]
+position = Vector2(-166, 231)
+shape = SubResource("RectangleShape2D_2eeof")
 
-[node name="WallLeft" type="StaticBody2D" parent="." unique_id=1570798878]
-collision_layer = 1
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=162806531]
 collision_mask = 0
 
-[node name="WallLeftShape" type="CollisionShape2D" parent="WallLeft" unique_id=661370570]
-position = Vector2(-1160, -200)
-shape = SubResource("RectangleShape2D_wallL_d")
+[node name="WallLeftShape" type="CollisionShape2D" parent="WallLeft" unique_id=331504807]
+position = Vector2(-1370, -196)
+shape = SubResource("RectangleShape2D_uj400")
 
-[node name="WallRight" type="StaticBody2D" parent="." unique_id=1333687284]
-collision_layer = 1
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=1874870502]
 collision_mask = 0
 
-[node name="WallRightShape" type="CollisionShape2D" parent="WallRight" unique_id=1586176841]
-position = Vector2(1160, -200)
-shape = SubResource("RectangleShape2D_wallR_d")
+[node name="WallRightShape" type="CollisionShape2D" parent="WallRight" unique_id=1051468493]
+position = Vector2(938, -168)
+shape = SubResource("RectangleShape2D_p8nbm")
 
-[node name="P1Spawn" type="Node2D" parent="." unique_id=1337596973]
-position = Vector2(-320, 280)
+[node name="P1Spawn" type="Node2D" parent="." unique_id=1493453091]
+position = Vector2(-682, 178)
 
-[node name="P2Spawn" type="Node2D" parent="." unique_id=1988456311]
-position = Vector2(320, 280)
+[node name="P2Spawn" type="Node2D" parent="." unique_id=2105452503]
+position = Vector2(340, 178)
 
-[node name="StageCamera" type="Camera2D" parent="." unique_id=1639240797]
-position = Vector2(0, 0)
+[node name="StageCamera" type="Camera2D" parent="." unique_id=1308513075]
+offset = Vector2(-200, -100)
 zoom = Vector2(0.85, 0.85)
