@@ -15,6 +15,7 @@ var equipped_shield: Equipment = null
 
 var current_clip: AnimationClip = null
 var current_move: Move = null
+var played_sound_events: Array[int] = []
 
 var clip_time: float = 0.0
 var move_time: float = 0.0
@@ -120,6 +121,7 @@ func play_move(move: Move, restart: bool = true) -> void:
 	if restart:
 		clip_time = 0.0
 		move_time = 0.0
+		played_sound_events.clear()
 
 	clear_active_hitboxes()
 	setup_move_hitboxes(move)
@@ -132,8 +134,45 @@ func stop_clip() -> void:
 func stop_move() -> void:
 	is_playing_move = false
 	current_move = null
+	played_sound_events.clear()
 	move_time = 0.0
 	clear_active_hitboxes()
+
+func update_move_sounds(previous_time: float, current_time_value: float) -> void:
+	if current_move == null:
+		return
+
+	if current_move.sound_events.is_empty():
+		return
+
+	for i in range(current_move.sound_events.size()):
+		if i in played_sound_events:
+			continue
+
+		var event: MoveSoundEvent = current_move.sound_events[i]
+		if event == null or event.sound == null:
+			continue
+
+		if previous_time < event.time and current_time_value >= event.time:
+			play_sound_event(event)
+			played_sound_events.append(i)
+
+func play_sound_event(event: MoveSoundEvent) -> void:
+	if event == null or event.sound == null:
+		return
+
+	if AudioManager != null and AudioManager.has_method("play_stream"):
+		AudioManager.play_stream(event.sound, event.volume_db, event.pitch_scale)
+		return
+
+	var player := AudioStreamPlayer.new()
+	player.stream = event.sound
+	player.volume_db = event.volume_db
+	player.pitch_scale = event.pitch_scale
+	player.bus = String(event.bus)
+	add_child(player)
+	player.finished.connect(player.queue_free)
+	player.play()
 
 func update_clip(delta: float) -> void:
 	if current_clip == null:
@@ -151,11 +190,13 @@ func update_clip(delta: float) -> void:
 func update_move(delta: float) -> void:
 	if current_move == null:
 		return
-
+	
+	var previous_time: float = move_time
 	move_time += delta
 	clip_time = move_time
 
 	update_move_hitboxes()
+	update_move_sounds(previous_time, move_time)
 
 	if move_time > current_move.duration:
 		move_time = current_move.duration

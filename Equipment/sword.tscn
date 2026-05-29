@@ -13,30 +13,25 @@ script = ExtResource("1_sw01")
 data = ExtResource("2_sw01")
 
 [node name="Default" type="Sprite2D" parent="." unique_id=494135481]
-position = Vector2(15, -49)
-rotation = -1.5707964
+position = Vector2(65, 1)
 texture = ExtResource("3_p8kl4")
 
-[node name="Angeled_0" type="Sprite2D" parent="." unique_id=1821363071]
+[node name="Angled_0" type="Sprite2D" parent="." unique_id=1821363071]
 visible = false
 position = Vector2(15, -49)
-rotation = -1.5707964
 texture = ExtResource("4_he8ag")
 
-[node name="Angeled_1" type="Sprite2D" parent="." unique_id=2049620953]
+[node name="Angled_1" type="Sprite2D" parent="." unique_id=2049620953]
 visible = false
 position = Vector2(15, -49)
-rotation = -1.5707964
 texture = ExtResource("5_r0gtv")
 
-[node name="Angeled_2" type="Sprite2D" parent="." unique_id=253197095]
+[node name="Angled_2" type="Sprite2D" parent="." unique_id=253197095]
 visible = false
 position = Vector2(15, -49)
-rotation = -1.5707964
 texture = ExtResource("6_d22hn")
 
-[node name="Angeled_3" type="Sprite2D" parent="." unique_id=313113913]
+[node name="Angled_3" type="Sprite2D" parent="." unique_id=313113913]
 visible = false
 position = Vector2(15, -49)
-rotation = -1.5707964
 texture = ExtResource("7_iq4ky")

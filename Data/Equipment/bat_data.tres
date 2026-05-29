@@ -5,5 +5,7 @@
 [resource]
 script = ExtResource("1_btd")
 equipment_type = 7
-local_offset = Vector2(0, -20)
+local_offset = Vector2(-10, -30)
+local_rotation_degrees = 10.0
+local_z_index_offset = -1
 metadata/_custom_type_script = "uid://jmt01psbvs84"

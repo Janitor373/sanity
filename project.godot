@@ -19,8 +19,9 @@ config/icon="res://icon.svg"
 
 Game="*uid://gqv475gdxow4"
 MatchSettings="*uid://dq8r2k6f4w9bp"
-AudioManager="*uid://cw7v3n5j8p2dr"
+AudioManager="*uid://o01n3m7hsrso"
 PlayerInput="*uid://dp4k8n2v6m5xt"
+AudioManagerScript="*uid://cw7v3n5j8p2dr"
 
 [display]
 

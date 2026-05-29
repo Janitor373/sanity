@@ -12,6 +12,9 @@ var body: Body = null
 var nearby_object = null
 var carried_object: Throwable = null
 
+var knockback_velocity: Vector2 = Vector2.ZERO
+@export var knockback_decay: float = 900.0
+
 func _ready() -> void:
 	for child in body_slot.get_children():
 		if child is Body:
@@ -47,8 +50,23 @@ func handle_attack_input() -> void:
 	else:
 		attack()
 
+func update_knockback(delta: float) -> void:
+	knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, knockback_decay * delta)
+
+func apply_hit_knockback(hitbox: Hitbox) -> void:
+	var kb := hitbox.knockback
+
+	if hitbox.attacker != null:
+		var away_sign: float = sign(global_position.x - hitbox.attacker.global_position.x)
+		if away_sign == 0:
+			away_sign = 1
+		kb.x = abs(kb.x) * away_sign
+
+	knockback_velocity += kb
+
 func receive_hit(hitbox: Hitbox, hurtbox: Hurtbox) -> void:
-	print("RECEIVE_HIT start | hp before=", hp)
+	# debug code
+	#print("RECEIVE_HIT start | hp before=", hp)
 
 	var attack_value := 0
 	if hitbox.attacker != null and hitbox.attacker.has_method("get_attack"):
@@ -60,8 +78,12 @@ func receive_hit(hitbox: Hitbox, hurtbox: Hurtbox) -> void:
 
 	var final_damage: int = roundi(raw_damage * hurtbox.damage_multiplier)
 	hp -= final_damage
+	
+	# debug code
+	#print("RECEIVE_HIT end | final_damage=", final_damage, " hp after=", hp)
 
-	print("RECEIVE_HIT end | final_damage=", final_damage, " hp after=", hp)
+	if AudioManager != null:
+		AudioManager.play_random_player_hit()
 
 	if hp <= 0:
 		die(hitbox.attacker)
@@ -70,6 +92,8 @@ func receive_hit(hitbox: Hitbox, hurtbox: Hurtbox) -> void:
 
 func die(_killer = null) -> void:
 	print(name, " died.")
+	if AudioManager != null:
+		AudioManager.play_death_grunt()
 	queue_free()
 
 func throw_object() -> void:

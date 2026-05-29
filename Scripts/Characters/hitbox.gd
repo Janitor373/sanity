@@ -77,8 +77,9 @@ func is_active_at_time(time: float, definition: HitboxDefinition) -> bool:
 func activate() -> void:
 	if not collision_shape.disabled:
 		return
+	# debug code
+	#print("ACTIVATING HITBOX: ", name, " id=", get_instance_id())
 	
-	print("ACTIVATING HITBOX: ", name, " id=", get_instance_id())
 	hit_targets.clear()
 	clashed_hitboxes.clear()
 	collision_shape.disabled = false
@@ -116,25 +117,27 @@ func _handle_hurtbox(hurtbox: Hurtbox) -> void:
 		return
 	if attacker != null and hurtbox.owner_character.team == attacker.team:
 		return
-
-	print(
-		"Hitbox check | hitbox_id=", get_instance_id(),
-		" hurtbox=", hurtbox.name,
-		" target=", hurtbox.owner_character.name,
-		" target_id=", hurtbox.owner_character.get_instance_id(),
-		" already_hit=", hurtbox.owner_character in hit_targets,
-		" hit_targets_size=", hit_targets.size()
-	)
+	
+	# debug code
+	#print(
+		#"Hitbox check | hitbox_id=", get_instance_id(),
+		#" hurtbox=", hurtbox.name,
+		#" target=", hurtbox.owner_character.name,
+		#" target_id=", hurtbox.owner_character.get_instance_id(),
+		#" already_hit=", hurtbox.owner_character in hit_targets,
+		#" hit_targets_size=", hit_targets.size()
+	#)
 
 	if hurtbox.owner_character in hit_targets:
 		return
 
 	hit_targets.append(hurtbox.owner_character)
-
-	print(
-		"After append | hitbox_id=", get_instance_id(),
-		" hit_targets_size=", hit_targets.size()
-	)
+	
+	# debug code
+	#print(
+		#"After append | hitbox_id=", get_instance_id(),
+		#" hit_targets_size=", hit_targets.size()
+	#)
 
 	if hurtbox.owner_character.has_method("receive_hit"):
 		hurtbox.owner_character.receive_hit(self, hurtbox)

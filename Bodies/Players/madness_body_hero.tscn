@@ -118,7 +118,6 @@ rest = Transform2D(1, 0, 0, 1, -5, -30)
 texture = ExtResource("7_boypd")
 
 [node name="Hat" type="Sprite2D" parent="HumanoidSkeleton/Root/Hip/Torso/Skull/SkullSprite" unique_id=1688063805]
-z_index = 1
 position = Vector2(-11, -28)
 texture = ExtResource("8_w2hxa")
 

@@ -4,7 +4,13 @@
 [ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_ax"]
 [ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="3_ax"]
 [ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="4_ax"]
+[ext_resource type="Resource" uid="uid://pcm4hidlvymh" path="res://Data/BoneTrack/foot_r_default.tres" id="4_p7j32"]
 [ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="5_ax"]
+[ext_resource type="Resource" uid="uid://cae4h3bqea7ow" path="res://Data/BoneTrack/foot_l_default.tres" id="5_kis8e"]
+[ext_resource type="Script" uid="uid://qsfjjtdax3xq" path="res://Scripts/Resources/Moves/move_propulsion_key.gd" id="5_nqpx4"]
+[ext_resource type="Script" uid="uid://bmicg6pa12ma3" path="res://Scripts/Resources/Moves/move_propulsion_clip.gd" id="6_1dgru"]
+[ext_resource type="Script" uid="uid://dfvqd63kecdmh" path="res://Scripts/Resources/Moves/move_sound_event.gd" id="10_e53g2"]
+[ext_resource type="AudioStream" uid="uid://b7tusmcgir51a" path="res://Data/Audio/SFX/woosh.wav" id="11_sxx7d"]
 
 [sub_resource type="Resource" id="kf_ax0"]
 script = ExtResource("5_ax")
@@ -14,21 +20,21 @@ metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 script = ExtResource("5_ax")
 time = 0.15
 rotation_degrees = -120.0
-position_offset = Vector2(15, -100)
+position_offset = Vector2(-15, -100)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax2"]
 script = ExtResource("5_ax")
 time = 0.32
 rotation_degrees = -155.0
-position_offset = Vector2(25, -140)
+position_offset = Vector2(75, -140)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax3"]
 script = ExtResource("5_ax")
 time = 0.55
 rotation_degrees = 55.0
-position_offset = Vector2(85, 75)
+position_offset = Vector2(185, 75)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_ax4"]
@@ -49,38 +55,106 @@ bone_name = &"HandR"
 keyframes = Array[ExtResource("5_ax")]([SubResource("kf_ax0"), SubResource("kf_ax1"), SubResource("kf_ax2"), SubResource("kf_ax3"), SubResource("kf_ax4"), SubResource("kf_ax5")])
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
+[sub_resource type="Resource" id="Resource_iyccd"]
+script = ExtResource("5_ax")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_entwi"]
+script = ExtResource("5_ax")
+time = 0.5
+rotation_degrees = 30.0
+position_offset = Vector2(-40, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_nqpx4"]
+script = ExtResource("5_ax")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
 [sub_resource type="Resource" id="trk_ax_hl"]
 script = ExtResource("4_ax")
 bone_name = &"HandL"
+keyframes = Array[ExtResource("5_ax")]([SubResource("Resource_iyccd"), SubResource("Resource_entwi"), SubResource("Resource_nqpx4")])
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
-[sub_resource type="Resource" id="trk_ax_fr"]
-script = ExtResource("4_ax")
-bone_name = &"FootR"
-metadata/_custom_type_script = "uid://db1nehhiderd1"
+[sub_resource type="Resource" id="Resource_1dgru"]
+script = ExtResource("5_ax")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
-[sub_resource type="Resource" id="trk_ax_fl"]
+[sub_resource type="Resource" id="Resource_p7j32"]
+script = ExtResource("5_ax")
+time = 0.3
+rotation_degrees = -10.0
+position_offset = Vector2(-30, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_kis8e"]
+script = ExtResource("5_ax")
+time = 0.5
+rotation_degrees = 10.0
+position_offset = Vector2(30, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_sxx7d"]
+script = ExtResource("5_ax")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_e53g2"]
 script = ExtResource("4_ax")
-bone_name = &"FootL"
+bone_name = &"Torso"
+keyframes = Array[ExtResource("5_ax")]([SubResource("Resource_1dgru"), SubResource("Resource_p7j32"), SubResource("Resource_kis8e"), SubResource("Resource_sxx7d")])
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
 [sub_resource type="Resource" id="clip_ax"]
 script = ExtResource("2_ax")
 clip_name = &"axe_attack"
 duration = 0.4
-tracks = Array[ExtResource("4_ax")]([SubResource("trk_ax_hr"), SubResource("trk_ax_hl"), SubResource("trk_ax_fr"), SubResource("trk_ax_fl")])
+tracks = Array[ExtResource("4_ax")]([SubResource("trk_ax_hr"), SubResource("trk_ax_hl"), SubResource("Resource_e53g2"), ExtResource("4_p7j32"), ExtResource("5_kis8e")])
 metadata/_custom_type_script = "uid://bs5iod7tqllph"
 
 [sub_resource type="Resource" id="hb_ax"]
 script = ExtResource("1_ax")
 attachment_point = &"HandR"
-shape_type = null
-size = Vector2(50, 50)
-active_start_time = 0.45
-active_end_time = 0.62
+shape_type = 0
+size = Vector2(100, 50)
+offset = Vector2(50, -100)
+active_start_time = 0.15
+active_end_time = 0.35
+damage = 20
+daze_damage = 12.0
+knockback = Vector2(500, 0)
 reaction = null
 attack_type = null
 metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
+
+[sub_resource type="Resource" id="Resource_s8x2e"]
+script = ExtResource("5_nqpx4")
+velocity = Vector2(-50, 0)
+metadata/_custom_type_script = "uid://qsfjjtdax3xq"
+
+[sub_resource type="Resource" id="Resource_35xki"]
+script = ExtResource("5_nqpx4")
+time = 0.5
+velocity = Vector2(200, 0)
+metadata/_custom_type_script = "uid://qsfjjtdax3xq"
+
+[sub_resource type="Resource" id="Resource_8povg"]
+script = ExtResource("5_nqpx4")
+time = 1.0
+velocity = Vector2(100, 0)
+metadata/_custom_type_script = "uid://qsfjjtdax3xq"
+
+[sub_resource type="Resource" id="Resource_2nemg"]
+script = ExtResource("6_1dgru")
+keys = Array[ExtResource("5_nqpx4")]([SubResource("Resource_s8x2e"), SubResource("Resource_35xki"), SubResource("Resource_8povg")])
+metadata/_custom_type_script = "uid://bmicg6pa12ma3"
+
+[sub_resource type="Resource" id="Resource_mqs6p"]
+script = ExtResource("10_e53g2")
+time = 0.2
+sound = ExtResource("11_sxx7d")
+metadata/_custom_type_script = "uid://dfvqd63kecdmh"
 
 [resource]
 script = ExtResource("3_ax")
@@ -88,4 +162,7 @@ move_name = &"axe_attack"
 animation_clip = SubResource("clip_ax")
 duration = 0.4
 hitboxes = Array[ExtResource("1_ax")]([SubResource("hb_ax")])
+propulsion = SubResource("Resource_2nemg")
+movement_multiplier = Vector2(0.4, 1)
+sound_events = Array[ExtResource("10_e53g2")]([SubResource("Resource_mqs6p")])
 metadata/_custom_type_script = "uid://dev7mvsyscumr"

@@ -1,85 +1,145 @@
 [gd_resource type="Resource" script_class="Move" format=3 uid="uid://cn5k8v2m7p4xq"]
 
 [ext_resource type="Script" uid="uid://dgs44s4b0nqu1" path="res://Scripts/Resources/Moves/hitbox_definiton.gd" id="1_btn"]
-[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="2_btn"]
+[ext_resource type="Script" uid="uid://bs5iod7tqllph" path="res://Scripts/Resources/Animation/animation_clip.gd" id="1_i6noc"]
+[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="2_pjhby"]
 [ext_resource type="Script" uid="uid://dev7mvsyscumr" path="res://Scripts/Resources/Moves/move.gd" id="3_btn"]
-[ext_resource type="Script" uid="uid://db1nehhiderd1" path="res://Scripts/Resources/Animation/bone_track.gd" id="4_btn"]
-[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="5_btn"]
+[ext_resource type="Script" uid="uid://cnqlavsy7c7ye" path="res://Scripts/Resources/Animation/bone_keyframe.gd" id="3_n2re6"]
+[ext_resource type="Resource" uid="uid://cae4h3bqea7ow" path="res://Data/BoneTrack/foot_l_default.tres" id="4_n2re6"]
+[ext_resource type="Resource" uid="uid://pcm4hidlvymh" path="res://Data/BoneTrack/foot_r_default.tres" id="5_bh6kc"]
+[ext_resource type="Script" uid="uid://qsfjjtdax3xq" path="res://Scripts/Resources/Moves/move_propulsion_key.gd" id="7_5q443"]
+[ext_resource type="Script" uid="uid://bmicg6pa12ma3" path="res://Scripts/Resources/Moves/move_propulsion_clip.gd" id="8_psvi8"]
+[ext_resource type="Script" uid="uid://dfvqd63kecdmh" path="res://Scripts/Resources/Moves/move_sound_event.gd" id="10_a5pif"]
+[ext_resource type="AudioStream" uid="uid://b7tusmcgir51a" path="res://Data/Audio/SFX/woosh.wav" id="11_q1u40"]
 
-[sub_resource type="Resource" id="kf_btn0"]
-script = ExtResource("5_btn")
+[sub_resource type="Resource" id="kf_ax0"]
+script = ExtResource("3_n2re6")
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
-[sub_resource type="Resource" id="kf_btn1"]
-script = ExtResource("5_btn")
-time = 0.1
-rotation_degrees = -40.0
-position_offset = Vector2(80, -40)
+[sub_resource type="Resource" id="kf_ax1"]
+script = ExtResource("3_n2re6")
+time = 0.15
+rotation_degrees = -120.0
+position_offset = Vector2(-10, -100)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
-[sub_resource type="Resource" id="kf_btn2"]
-script = ExtResource("5_btn")
-time = 0.22
-rotation_degrees = 15.0
-position_offset = Vector2(140, 0)
+[sub_resource type="Resource" id="kf_ax2"]
+script = ExtResource("3_n2re6")
+time = 0.32
+rotation_degrees = -155.0
+position_offset = Vector2(100, -120)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
-[sub_resource type="Resource" id="kf_btn3"]
-script = ExtResource("5_btn")
-time = 0.38
-rotation_degrees = 10.0
-position_offset = Vector2(130, -5)
+[sub_resource type="Resource" id="kf_ax3"]
+script = ExtResource("3_n2re6")
+time = 0.55
+rotation_degrees = 55.0
+position_offset = Vector2(200, -100)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
-[sub_resource type="Resource" id="kf_btn4"]
-script = ExtResource("5_btn")
-time = 0.7
+[sub_resource type="Resource" id="kf_ax4"]
+script = ExtResource("3_n2re6")
+time = 0.68
+rotation_degrees = 45.0
+position_offset = Vector2(75, -80)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
-[sub_resource type="Resource" id="trk_btn_hr"]
-script = ExtResource("4_btn")
+[sub_resource type="Resource" id="kf_ax5"]
+script = ExtResource("3_n2re6")
+time = 1.0
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="trk_ax_hr"]
+script = ExtResource("2_pjhby")
 bone_name = &"HandR"
-keyframes = Array[ExtResource("5_btn")]([SubResource("kf_btn0"), SubResource("kf_btn1"), SubResource("kf_btn2"), SubResource("kf_btn3"), SubResource("kf_btn4")])
+keyframes = Array[ExtResource("3_n2re6")]([SubResource("kf_ax0"), SubResource("kf_ax1"), SubResource("kf_ax2"), SubResource("kf_ax3"), SubResource("kf_ax4"), SubResource("kf_ax5")])
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
-[sub_resource type="Resource" id="trk_btn_hl"]
-script = ExtResource("4_btn")
+[sub_resource type="Resource" id="trk_ax_hl"]
+script = ExtResource("2_pjhby")
 bone_name = &"HandL"
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
-[sub_resource type="Resource" id="trk_btn_fr"]
-script = ExtResource("4_btn")
-bone_name = &"FootR"
+[sub_resource type="Resource" id="Resource_pjhby"]
+script = ExtResource("3_n2re6")
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_n2re6"]
+script = ExtResource("3_n2re6")
+time = 0.5
+rotation_degrees = 10.0
+position_offset = Vector2(30, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_bh6kc"]
+script = ExtResource("3_n2re6")
+time = 1.0
+rotation_degrees = -5.0
+position_offset = Vector2(-5, 0)
+metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
+
+[sub_resource type="Resource" id="Resource_i6noc"]
+script = ExtResource("2_pjhby")
+bone_name = &"Torso"
+keyframes = Array[ExtResource("3_n2re6")]([SubResource("Resource_pjhby"), SubResource("Resource_n2re6"), SubResource("Resource_bh6kc")])
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
-[sub_resource type="Resource" id="trk_btn_fl"]
-script = ExtResource("4_btn")
-bone_name = &"FootL"
-metadata/_custom_type_script = "uid://db1nehhiderd1"
-
-[sub_resource type="Resource" id="clip_btn"]
-script = ExtResource("2_btn")
+[sub_resource type="Resource" id="clip_ax"]
+script = ExtResource("1_i6noc")
 clip_name = &"baton_attack"
-duration = 0.38
-tracks = Array[ExtResource("4_btn")]([SubResource("trk_btn_hr"), SubResource("trk_btn_hl"), SubResource("trk_btn_fr"), SubResource("trk_btn_fl")])
+duration = 0.4
+tracks = Array[ExtResource("2_pjhby")]([SubResource("trk_ax_hr"), SubResource("trk_ax_hl"), SubResource("Resource_i6noc"), ExtResource("4_n2re6"), ExtResource("5_bh6kc")])
 metadata/_custom_type_script = "uid://bs5iod7tqllph"
 
-[sub_resource type="Resource" id="hb_btn"]
+[sub_resource type="Resource" id="hb_ax"]
 script = ExtResource("1_btn")
-attachment_point = &"HandR"
-size = Vector2(44, 18)
-offset = Vector2(20, 0)
-active_start_time = 0.14
-active_end_time = 0.32
-damage = 11
-daze_damage = 12.0
-knockback = Vector2(150, -50)
+attachment_point = &"Weapon"
+size = Vector2(80, 160)
+offset = Vector2(0, -80)
+active_start_time = 0.1
+active_end_time = 0.3
+damage = 18
+daze_damage = 20.0
+knockback = Vector2(600, 0)
+reaction = null
+attack_type = null
 metadata/_custom_type_script = "uid://dgs44s4b0nqu1"
+
+[sub_resource type="Resource" id="Resource_a5pif"]
+script = ExtResource("7_5q443")
+velocity = Vector2(-30, 0)
+metadata/_custom_type_script = "uid://qsfjjtdax3xq"
+
+[sub_resource type="Resource" id="Resource_q1u40"]
+script = ExtResource("7_5q443")
+time = 0.4
+velocity = Vector2(200, 0)
+metadata/_custom_type_script = "uid://qsfjjtdax3xq"
+
+[sub_resource type="Resource" id="Resource_l2x0v"]
+script = ExtResource("7_5q443")
+time = 1.0
+velocity = Vector2(250, 0)
+metadata/_custom_type_script = "uid://qsfjjtdax3xq"
+
+[sub_resource type="Resource" id="Resource_d7tr5"]
+script = ExtResource("8_psvi8")
+keys = Array[ExtResource("7_5q443")]([SubResource("Resource_a5pif"), SubResource("Resource_q1u40"), SubResource("Resource_l2x0v")])
+metadata/_custom_type_script = "uid://bmicg6pa12ma3"
+
+[sub_resource type="Resource" id="Resource_q8by5"]
+script = ExtResource("10_a5pif")
+time = 0.15
+sound = ExtResource("11_q1u40")
+metadata/_custom_type_script = "uid://dfvqd63kecdmh"
 
 [resource]
 script = ExtResource("3_btn")
 move_name = &"baton_attack"
-animation_clip = SubResource("clip_btn")
+animation_clip = SubResource("clip_ax")
 duration = 0.38
-hitboxes = Array[ExtResource("1_btn")]([SubResource("hb_btn")])
+hitboxes = Array[ExtResource("1_btn")]([SubResource("hb_ax")])
+propulsion = SubResource("Resource_d7tr5")
+movement_multiplier = Vector2(0.6, 1)
+sound_events = Array[ExtResource("10_a5pif")]([SubResource("Resource_q8by5")])
 metadata/_custom_type_script = "uid://dev7mvsyscumr"

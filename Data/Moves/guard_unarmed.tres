@@ -14,14 +14,14 @@ metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 script = ExtResource("5_gu")
 time = 0.12
 rotation_degrees = -25.0
-position_offset = Vector2(65, -40)
+position_offset = Vector2(85, -80)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_gu_hr2"]
 script = ExtResource("5_gu")
 time = 0.88
 rotation_degrees = -25.0
-position_offset = Vector2(65, -40)
+position_offset = Vector2(85, -70)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_gu_hr3"]
@@ -37,20 +37,23 @@ metadata/_custom_type_script = "uid://db1nehhiderd1"
 
 [sub_resource type="Resource" id="kf_gu_hl0"]
 script = ExtResource("5_gu")
+z_index_offset = 4
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_gu_hl1"]
 script = ExtResource("5_gu")
 time = 0.12
 rotation_degrees = 25.0
-position_offset = Vector2(-65, -35)
+z_index_offset = 6
+position_offset = Vector2(-15, -70)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_gu_hl2"]
 script = ExtResource("5_gu")
 time = 0.88
 rotation_degrees = 25.0
-position_offset = Vector2(-65, -35)
+z_index_offset = 6
+position_offset = Vector2(-15, -60)
 metadata/_custom_type_script = "uid://cnqlavsy7c7ye"
 
 [sub_resource type="Resource" id="kf_gu_hl3"]
@@ -64,21 +67,11 @@ bone_name = &"HandL"
 keyframes = Array[ExtResource("5_gu")]([SubResource("kf_gu_hl0"), SubResource("kf_gu_hl1"), SubResource("kf_gu_hl2"), SubResource("kf_gu_hl3")])
 metadata/_custom_type_script = "uid://db1nehhiderd1"
 
-[sub_resource type="Resource" id="trk_gu_fr"]
-script = ExtResource("4_gu")
-bone_name = &"FootR"
-metadata/_custom_type_script = "uid://db1nehhiderd1"
-
-[sub_resource type="Resource" id="trk_gu_fl"]
-script = ExtResource("4_gu")
-bone_name = &"FootL"
-metadata/_custom_type_script = "uid://db1nehhiderd1"
-
 [sub_resource type="Resource" id="clip_gu"]
 script = ExtResource("2_gu")
 clip_name = &"guard_unarmed"
 duration = 0.5
-tracks = Array[ExtResource("4_gu")]([SubResource("trk_gu_hr"), SubResource("trk_gu_hl"), SubResource("trk_gu_fr"), SubResource("trk_gu_fl")])
+tracks = Array[ExtResource("4_gu")]([SubResource("trk_gu_hr"), SubResource("trk_gu_hl")])
 metadata/_custom_type_script = "uid://bs5iod7tqllph"
 
 [resource]

@@ -7,3 +7,4 @@ class_name Move
 @export var hitboxes: Array[HitboxDefinition] = []
 @export var propulsion: MovePropulsionClip
 @export var movement_multiplier: Vector2 = Vector2.ONE
+@export var sound_events: Array[MoveSoundEvent] = []
