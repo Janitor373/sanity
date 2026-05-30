@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 
 		if not is_blocking:
 			input_dir.x = PlayerInput.get_horizontal(player_slot)
-			# input_dir.y = PlayerInput.get_vertical(player_slot)
+			#input_dir.y = PlayerInput.get_vertical(player_slot)
 
 			if grounded and PlayerInput.jump_pressed(player_slot):
 				vertical_velocity = JUMP_VELOCITY

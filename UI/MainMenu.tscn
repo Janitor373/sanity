@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cb7m4k2wan8pt"]
 
 [ext_resource type="Script" uid="uid://bwak4x2m7n5pq" path="res://Scripts/UI/main_menu.gd" id="1_mm001"]
+[ext_resource type="Texture2D" uid="uid://c4qclofdfuhnc" path="res://Data/Stages/main_menu_dark.png" id="2_b37jj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_title"]
-font_size = 96
+font_size = 137
 outline_size = 8
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_RESET"]
 resource_name = "RESET"
@@ -41,7 +41,7 @@ length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background:modulate")
+tracks/0/path = NodePath("Background_OLD:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -125,7 +125,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mm001")
 
-[node name="Background" type="ColorRect" parent="." unique_id=520036527]
+[node name="Background" type="Sprite2D" parent="." unique_id=1088130182]
+position = Vector2(957, 541)
+texture = ExtResource("2_b37jj")
+
+[node name="Background_OLD" type="ColorRect" parent="." unique_id=520036527]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,16 +140,16 @@ grow_vertical = 2
 color = Color(0.07, 0.07, 0.1, 1)
 
 [node name="TitleLabel" type="Label" parent="." unique_id=844845554]
+self_modulate = Color(0.7262234, 2.695322e-06, 2.8878452e-07, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -400.0
-offset_top = 80.0
-offset_right = 400.0
-offset_bottom = 220.0
+offset_left = -164.0
+offset_top = 53.0
+offset_right = 636.0
+offset_bottom = 241.0
 grow_horizontal = 2
-grow_vertical = 0
 pivot_offset = Vector2(400, 70)
 text = "SANITY"
 label_settings = SubResource("LabelSettings_title")
@@ -156,7 +161,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 120.0
+offset_left = -9.0
+offset_top = 144.0
+offset_right = -9.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 

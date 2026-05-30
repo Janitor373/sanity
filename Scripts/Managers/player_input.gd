@@ -27,6 +27,14 @@ func get_horizontal(slot: int) -> float:
 		axis += 1.0
 	return axis
 
+func get_vertical(slot: int) -> float:
+	var axis := 0.0
+	if Input.is_action_pressed(get_action(slot, &"move_up")):
+		axis -= 1.0
+	if Input.is_action_pressed(get_action(slot, &"move_down")):
+		axis += 1.0
+	return axis
+
 func attack_pressed(slot: int) -> bool:
 	return Input.is_action_just_pressed(get_action(slot, &"attack"))
 
